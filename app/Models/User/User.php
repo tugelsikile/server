@@ -16,6 +16,8 @@ use Laravel\Passport\HasApiTokens;
  * @property string $email
  * @property string $password
  * @property string $level
+ * @property string $major
+ * @property int $class_level
  */
 class User extends Authenticatable
 {
@@ -33,6 +35,8 @@ class User extends Authenticatable
         'email',
         'password',
         'level',
+        'major',
+        'class_level'
     ];
 
     /**

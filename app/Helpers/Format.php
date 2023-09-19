@@ -28,3 +28,12 @@ function generateExamClientCode(): string
     }
     return $kode;
 }
+function generateCourseCode(string $courseName): string
+{
+    $code = "";
+    $courseName = explode(" ",$courseName);
+    foreach ($courseName as $item) {
+        $code .= Str::substr($item,0,1);
+    }
+    return $code;
+}
