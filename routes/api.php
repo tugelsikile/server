@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Exam\ClientController;
 use App\Http\Controllers\Exam\ExamController;
+use App\Http\Controllers\MajorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,4 @@ Route::group(['prefix' => 'exam', 'middleware' => 'auth:api'], function () {
         Route::any('/', [ClientController::class, 'crud']);
     });
 });
+Route::any('/major', [MajorController::class, 'crud'])->middleware('auth:api');

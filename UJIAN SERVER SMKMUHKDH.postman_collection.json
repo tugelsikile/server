@@ -28,6 +28,9 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -62,7 +65,195 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "super@admin.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "P4ssw0rd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://ujian.server.smkmuhkdh.net/api/auth/login",
+									"protocol": "https",
+									"host": [
+										"ujian",
+										"server",
+										"smkmuhkdh",
+										"net"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:33:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5YTJhZTM1NS04ZjY1LTQ4YTUtOThmZi0xMzY5NmI1MmFlZWQiLCJqdGkiOiJhNmU2MmI3ZTYxYjc3OTIwMjcxOGM3MTBlNGRiZDZmMDQwNmQxZGNjODdiZDY5YzAxZjEyMjY1Yjk0ZDY2NmIyMDc5OTUwNWIwZDlhZDEzYiIsImlhdCI6MTY5NTEwMTYyOS4xNjQyNywibmJmIjoxNjk1MTAxNjI5LjE2NDI3NSwiZXhwIjoxNzI2NzI0MDI5LjEwMDUwMiwic3ViIjoiOTRmNGRjNTAtN2FkMC00ZDEzLThmOWUtZjk2MGRmN2E0MjVlIiwic2NvcGVzIjpbXX0.HSmAS_xzzON5-GI7WskarX-Jm2AiIC0tBM_lZIzI_jOoartCnuz2TzmiLO_ydziYNW01N5d6AQ7lQAflNs2UhWRh-jb_QCiaKUCCvn5Ez0S1Hl5zGEQrZ3b53lwQ-IGUkXLEEPnVmWpCeeFy288C388cl5wtvW9cFK4FYSXLRsuIP5ZBGtG3SrW1VXk63BOMM2_JsScecNNqqVKIpwDhnlCkceXxCkVmnbCPr7bsQ0asUN5qGky6faboRXLuTzP1Dq1fSr_8gWu544DWXBlEAYEMG4LgVdcN1pi9PoJfalIUXAIjs3stP8eeD8Q5FFl2PAdH6xWlgZnrwifdDxL4AyKy4PduMxiLxoDksZ9caPFw0gCn8JcX0ApT2q-r0gfCreFi11TXoN0gBC9q18qPQCdWr9hPi4j5jqWUlf4zcp2C_EISsyCKMo5c2KRlABf-55tWqIraLQUDxZHGUfL1onV29gnX6za5rlawzFk_qKLSrjN69_r-Igcc0hcVJ2KftULzjBWbvk_MUQwxIs4_UGeaX9dIjprt4lP-xZwN0vW890pJUiTw_0RFkPAnFX1kE7ELFkF4EhCkOj4y_GEFUuT-q4vIa3UOs9s7cfOhJcL5IIP3PPgijG3KaCCyw8YgRP9HWy0ueoB6_q0VfkmZ2Q_FF0fu9yENGZST4X-MxVk\",\n        \"data\": {\n            \"value\": \"94f4dc50-7ad0-4d13-8f9e-f960df7a425e\",\n            \"label\": \"Super Admin\",\n            \"meta\": {\n                \"email\": \"super@admin.com\",\n                \"level\": \"super\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "super@admin.comd",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "P4ssw0rd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/auth/login",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:34:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"status_message\": \"Username yang dipilih tidak valid.\",\n    \"status_data\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "Logout",
@@ -96,7 +287,91 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://ujian.server.smkmuhkdh.net/api/auth/logout",
+									"protocol": "https",
+									"host": [
+										"ujian",
+										"server",
+										"smkmuhkdh",
+										"net"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:34:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": true\n}"
+						}
+					]
 				},
 				{
 					"name": "Me",
@@ -130,7 +405,91 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://ujian.server.smkmuhkdh.net/api/auth/me",
+									"protocol": "https",
+									"host": [
+										"ujian",
+										"server",
+										"smkmuhkdh",
+										"net"
+									],
+									"path": [
+										"api",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:36:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": {\n        \"value\": \"94f4dc50-7ad0-4d13-8f9e-f960df7a425e\",\n        \"label\": \"Super Admin\",\n        \"meta\": {\n            \"email\": \"super@admin.com\",\n            \"level\": \"super\"\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -509,11 +868,16 @@
 											]
 										},
 										"url": {
-											"raw": "{{api_url}}/exam/client",
+											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
+											"protocol": "https",
 											"host": [
-												"{{api_url}}"
+												"ujian",
+												"server",
+												"smkmuhkdh",
+												"net"
 											],
 											"path": [
+												"api",
 												"exam",
 												"client"
 											]
@@ -662,11 +1026,16 @@
 											]
 										},
 										"url": {
-											"raw": "{{api_url}}/exam/client",
+											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
+											"protocol": "https",
 											"host": [
-												"{{api_url}}"
+												"ujian",
+												"server",
+												"smkmuhkdh",
+												"net"
 											],
 											"path": [
+												"api",
 												"exam",
 												"client"
 											]
@@ -1246,6 +1615,536 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Major",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "nullable",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/major",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"major"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "nullable",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/major",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"major"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:33:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": [\n        {\n            \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n            \"label\": \"Teknik Komputer dan Jaringan\",\n            \"meta\": {\n                \"code\": \"TKJT\"\n            }\n        },\n        {\n            \"value\": \"40f9001a-64cd-4fa5-9afa-d8e454fc6a60\",\n            \"label\": \"Teknik Otomotif Kendaraan Ringan\",\n            \"meta\": {\n                \"code\": \"TKRO\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_jurusan",
+									"value": "Teknik Elektronika Berbasis Mesin",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "singkatan",
+									"value": "TEIM",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/major",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"major"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nama_jurusan",
+											"value": "Teknik Komputer dan Jaringan",
+											"description": "nullable",
+											"type": "text"
+										},
+										{
+											"key": "singkatan",
+											"value": "TKJT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/major",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"major"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:30:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"jurusan berhasil ditambahkan\",\n    \"status_data\": {\n        \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n        \"label\": \"Teknik Komputer dan Jaringan\",\n        \"meta\": {\n            \"code\": \"TKJT\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data_jurusan",
+									"value": "aa2bbf39-b099-4796-9c22-a29cbcf36916",
+									"description": "nullable",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/major",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"major"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "data_jurusan",
+											"value": "aa2bbf39-b099-4796-9c22-a29cbcf36916",
+											"description": "nullable",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/major",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"major"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:32:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"jurusan berhasil dihapus\",\n    \"status_data\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_jurusan",
+									"value": "Teknik Komputer dan Jaringan",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "singkatan",
+									"value": "TKJT",
+									"type": "text"
+								},
+								{
+									"key": "data_jurusan",
+									"value": "015bf366-cfe8-4863-a0f2-41e42755fa77",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/major",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"major"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nama_jurusan",
+											"value": "Teknik Komputer dan Jaringan",
+											"description": "nullable",
+											"type": "text"
+										},
+										{
+											"key": "singkatan",
+											"value": "TKJT",
+											"type": "text"
+										},
+										{
+											"key": "data_jurusan",
+											"value": "015bf366-cfe8-4863-a0f2-41e42755fa77",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/major",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"major"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:31:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"jurusan berhasil dirubah\",\n    \"status_data\": {\n        \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n        \"label\": \"Teknik Komputer dan Jaringan\",\n        \"meta\": {\n            \"code\": \"TKJT\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Jurusan / program keahlian"
 		}
 	],
 	"auth": {
