@@ -4,7 +4,7 @@
 		"name": "UJIAN SERVER SMKMUHKDH",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "11016197",
-		"_collection_link": "https://speeding-zodiac-280580.postman.co/workspace/My-Workspace~9ea83497-ab76-43d6-8b54-fe2862aef3c9/collection/11016197-5b920023-bd3e-4636-9e69-4d91790a402f?action=share&source=collection_link&creator=11016197"
+		"_collection_link": "https://speeding-zodiac-280580.postman.co/workspace/9ea83497-ab76-43d6-8b54-fe2862aef3c9/collection/11016197-5b920023-bd3e-4636-9e69-4d91790a402f?action=share&source=collection_link&creator=11016197"
 	},
 	"item": [
 		{
@@ -131,6 +131,1119 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exam",
+			"item": [
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "Get All",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "nullable",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exam",
+											"value": "",
+											"description": "nullable",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam/client",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam",
+										"client"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "nullable",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "exam",
+													"value": "",
+													"description": "nullable",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
+											"protocol": "https",
+											"host": [
+												"ujian",
+												"server",
+												"smkmuhkdh",
+												"net"
+											],
+											"path": [
+												"api",
+												"exam",
+												"client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Sep 2023 05:07:13 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=99"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": [\n        {\n            \"value\": \"1298ad71-9455-44bd-a50c-7fde65555501\",\n            \"label\": \"SERVER 01\",\n            \"meta\": {\n                \"code\": \"2309001\",\n                \"token\": \"ETZUP-U9GMX-DU2\"\n            }\n        },\n        {\n            \"value\": \"58d70808-80a5-445b-9838-4b97a9945aa7\",\n            \"label\": \"SERVER 02\",\n            \"meta\": {\n                \"code\": \"2309002\",\n                \"token\": \"H5T7R-ETQQM-F1X\"\n            }\n        },\n        {\n            \"value\": \"f787c151-4fba-4a9b-9ed0-271ffbc62460\",\n            \"label\": \"SERVER 03\",\n            \"meta\": {\n                \"code\": \"2309003\",\n                \"token\": \"QCJVX-LZUOB-5AJ\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "data_client",
+											"value": "1298ad71-9455-44bd-a50c-7fde65555501",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam/client",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam",
+										"client"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "data_client",
+													"value": "1298ad71-9455-44bd-a50c-7fde65555501",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
+											"protocol": "https",
+											"host": [
+												"ujian",
+												"server",
+												"smkmuhkdh",
+												"net"
+											],
+											"path": [
+												"api",
+												"exam",
+												"client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Sep 2023 05:08:25 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"client berhasil dihapus\",\n    \"status_data\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nama_client",
+											"value": "SERVER 01",
+											"type": "text"
+										},
+										{
+											"key": "ujian",
+											"value": "a2234a79-556a-4f61-a928-bf1440d8dca9",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam/client",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam",
+										"client"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "nama_client",
+													"value": "SERVER 01",
+													"type": "text"
+												},
+												{
+													"key": "ujian",
+													"value": "a2234a79-556a-4f61-a928-bf1440d8dca9",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/exam/client",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"exam",
+												"client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Sep 2023 05:03:40 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"client berhasil dibuat\",\n    \"status_data\": {\n        \"value\": \"1298ad71-9455-44bd-a50c-7fde65555501\",\n        \"label\": \"SERVER 01\",\n        \"meta\": {\n            \"code\": \"2309001\",\n            \"token\": \"ETZUP-U9GMX-DU2\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nama_client",
+											"value": "SERVER 01",
+											"type": "text"
+										},
+										{
+											"key": "ujian",
+											"value": "a2234a79-556a-4f61-a928-bf1440d8dca9",
+											"type": "text"
+										},
+										{
+											"key": "data_client",
+											"value": "1298ad71-9455-44bd-a50c-7fde65555501",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam/client",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam",
+										"client"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "nama_client",
+													"value": "SERVER 01",
+													"type": "text"
+												},
+												{
+													"key": "ujian",
+													"value": "a2234a79-556a-4f61-a928-bf1440d8dca9",
+													"type": "text"
+												},
+												{
+													"key": "data_client",
+													"value": "1298ad71-9455-44bd-a50c-7fde65555501",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/exam/client",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"exam",
+												"client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Sep 2023 05:06:48 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "54"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"client berhasil diubah\",\n    \"status_data\": {\n        \"value\": \"1298ad71-9455-44bd-a50c-7fde65555501\",\n        \"label\": \"SERVER 01\",\n        \"meta\": {\n            \"code\": \"2309001\",\n            \"token\": \"ETZUP-U9GMX-DU2\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "nullable",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/exam",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"exam"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "nullable",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 04:59:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": [\n        {\n            \"value\": \"a2234a79-556a-4f61-a928-bf1440d8dca9\",\n            \"label\": \"testing\",\n            \"meta\": {\n                \"description\": null\n            }\n        },\n        {\n            \"value\": \"afb14489-ddb4-4b57-a05e-b2a04158d887\",\n            \"label\": \"testing dirubah\",\n            \"meta\": {\n                \"description\": \"kanggo testing\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_ujian",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "keterangan",
+									"value": "kanggo testing",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/exam",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"exam"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nama_ujian",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "keterangan",
+											"value": "kanggo testing",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 04:57:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ujian berhasil ditambahkan\",\n    \"status_data\": {\n        \"value\": \"afb14489-ddb4-4b57-a05e-b2a04158d887\",\n        \"label\": \"testing\",\n        \"meta\": {\n            \"description\": \"kanggo testing\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data_ujian",
+									"value": "a2234a79-556a-4f61-a928-bf1440d8dca9",
+									"type": "text"
+								},
+								{
+									"key": "nama_ujian",
+									"value": "testing dirubah",
+									"type": "text"
+								},
+								{
+									"key": "keterangan",
+									"value": "kanggo testing",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/exam",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"exam"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nama_ujian",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "keterangan",
+											"value": "kanggo testing",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 04:57:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ujian berhasil ditambahkan\",\n    \"status_data\": {\n        \"value\": \"afb14489-ddb4-4b57-a05e-b2a04158d887\",\n        \"label\": \"testing\",\n        \"meta\": {\n            \"description\": \"kanggo testing\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data_ujian",
+									"value": "afb14489-ddb4-4b57-a05e-b2a04158d887",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/exam",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"exam"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "data_ujian",
+											"value": "afb14489-ddb4-4b57-a05e-b2a04158d887",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_url}}/exam",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"exam"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 05:00:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ujian berhasil dihapus\",\n    \"status_data\": true\n}"
+						}
+					]
 				}
 			]
 		}
