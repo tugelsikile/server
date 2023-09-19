@@ -1,4 +1,9 @@
 # MAIN SERVER
+### First Run
+- `composer install`
+- `php artisan migrate`
+- `php artisan passport:install`
+- `php artisan db:seed --class=UserSeeder`
 ### Database
 - character set `utfmb4`
 - collation `utf8mb4_general_ci`
