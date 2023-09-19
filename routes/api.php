@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Exam\ClientController;
+use App\Http\Controllers\Exam\ExamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +22,9 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::any('/me', [AuthController::class, 'me'])->middleware('auth:api')->name('me');
 });
-
+Route::group(['prefix' => 'exam', 'middleware' => 'auth:api'], function () {
+    Route::any('/', [ExamController::class, 'crud']);
+    Route::group(['prefix' => 'client'], function () {
+        Route::any('/', [ClientController::class, 'crud']);
+    });
+});
