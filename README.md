@@ -7,4 +7,4 @@
 - selalu buat controller kedalam direktori masing masing sesuai group pada route `api`.
 - selalu buat validation dan repository sesuai dengan `controllernya`
 - `repository` adalah yang berhubungan dengan model
-- `validation` yang berhubungan dengan validasi request
+- `validation` adalah yang berhubungan dengan validasi request

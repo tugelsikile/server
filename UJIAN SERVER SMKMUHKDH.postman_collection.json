@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "5b920023-bd3e-4636-9e69-4d91790a402f",
+		"name": "UJIAN SERVER SMKMUHKDH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11016197",
+		"_collection_link": "https://speeding-zodiac-280580.postman.co/workspace/My-Workspace~9ea83497-ab76-43d6-8b54-fe2862aef3c9/collection/11016197-5b920023-bd3e-4636-9e69-4d91790a402f?action=share&source=collection_link&creator=11016197"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let access_token = pm.environment.get(\"access_token\");\r",
+									"const res = JSON.parse(responseBody);\r",
+									"const res_params = res.status_data\r",
+									"pm.environment.set(\"access_token\", res_params.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "super@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "P4ssw0rd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/auth/login",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "deUWrYGJEVHCY8d07zw9DL:APA91bHzsFmUVxBjXNrHiWA46Jp6QVU-v-v0CpyOMXWzX4hMCe0SKYlF-FOlffdy0w-BRhvWYeGul-cT-wJogKD4Kj4cxAGJszkZ6IHV_1lZR45OvtW_s33eNlhBX4YCJv2q5fPbRqqH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/auth/logout",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/auth/me",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
