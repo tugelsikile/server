@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Course\CourseTopic;
 use App\Models\Exam\ExamClient;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
@@ -34,6 +35,17 @@ function generateCourseCode(string $courseName): string
     $courseName = explode(" ",$courseName);
     foreach ($courseName as $item) {
         $code .= Str::substr($item,0,1);
+    }
+    return $code;
+}
+function generateCourseTopicCode(): string
+{
+    $total = CourseTopic::all()->count();
+    $total = $total + 1;
+    $code = Carbon::now()->format('ymd') . Str::padLeft($total,3,'0');
+    while (CourseTopic::where('code', $code)->count() > 0) {
+        $total = $total + 1;
+        $code = Carbon::now()->format('ymd') . Str::padLeft($total,3,'0');
     }
     return $code;
 }

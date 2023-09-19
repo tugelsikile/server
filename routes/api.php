@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Course\CourseController;
+use App\Http\Controllers\Course\TopicController;
 use App\Http\Controllers\Exam\ClientController;
 use App\Http\Controllers\Exam\ExamController;
 use App\Http\Controllers\MajorController;
@@ -35,4 +36,8 @@ Route::any('/major', [MajorController::class, 'crud'])->middleware('auth:api');
 Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
     Route::any('/', [UserController::class, 'crud']);
 });
-Route::any('/course', [CourseController::class, 'crud'])->middleware('auth:api');
+Route::group(['prefix' => 'course', 'middleware' => 'auth:api'], function () {
+    Route::any('/', [CourseController::class, 'crud']);
+    Route::any('/topic', [TopicController::class, 'crud']);
+});
+
