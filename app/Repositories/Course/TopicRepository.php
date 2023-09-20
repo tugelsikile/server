@@ -58,7 +58,7 @@ class TopicRepository
             $topics = CourseTopic::orderBy('name', 'asc');
             if ($request->has('id')) $topics = $topics->where('id', $request['id']);
             if ($request->has('course')) $topics = $topics->where('course', $request['course']);
-            $topics = $topics->get();
+            $topics = $topics->get(['id','course','name','code']);
             foreach ($topics as $topic) {
                 $response->push((object) [
                     'value' => $topic->id,

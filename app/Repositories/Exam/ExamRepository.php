@@ -21,13 +21,18 @@ class ExamRepository
             $response = collect();
             $exams = Exam::orderBy('name', 'asc');
             if ($request->has('id')) $exams = $exams->where('id', $request['id']);
-            $exams = $exams->get(['id','name','description']);
+            $exams = $exams->get(['id','name','description','random_answer','random_question','show_result']);
             foreach ($exams as $item) {
                 $response->push((object) [
                     'value' => $item->id,
                     'label' => $item->name,
                     'meta' => (object) [
                         'description' => $item->description,
+                        'show_result' => $item->show_result,
+                        'random' => (object) [
+                            'answer' => $item->random_answer,
+                            'question' => $item->random_question,
+                        ]
                     ]
                 ]);
             }

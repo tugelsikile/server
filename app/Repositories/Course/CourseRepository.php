@@ -66,7 +66,7 @@ class CourseRepository
             if ($request->has('id')) $courses = $courses->where('id', $request['id']);
             if ($request->has('major')) $courses = $courses->where('major', $request['major']);
             if ($request->has('level')) $courses = $courses->where('level', $request['level']);
-            $courses = $courses->get();
+            $courses = $courses->get(['id','major','level','name','code','level']);
             foreach ($courses as $course) {
                 $major = null;
                 if ($course->major != null) $major = (new MajorRepository())->table(new Request(['id' => $course->major]))->first();

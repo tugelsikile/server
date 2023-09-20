@@ -13,10 +13,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @property string $created_by
  * @property string $updated_by
+ * @property bool $random_answer
+ * @property bool $random_question
+ * @property bool $show_result
  */
 class Exam extends Model
 {
     use HasFactory;
     protected $keyType = 'string';
     public $incrementing = false;
+
+    protected $casts = [
+        'random_question' => 'boolean',
+        'random_answer' => 'boolean',
+        'show_result' => 'boolean',
+    ];
 }
