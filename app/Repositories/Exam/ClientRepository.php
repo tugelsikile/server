@@ -22,13 +22,14 @@ class ClientRepository
             $clients = ExamClient::orderBy('name','asc');
             if ($request->has('id')) $clients = $clients->where('id', $request['id']);
             if ($request->has('exam')) $clients = $clients->where('exam', $request['exam']);
-            foreach ($clients->get(['id','name','code','token','meta']) as $client) {
+            foreach ($clients->get(['id','name','code','token','meta','exam']) as $client) {
                 $response->push((object) [
                     'value' => $client->id,
                     'label' => $client->name,
                     'meta' => (object) [
                         'code' => $client->code,
                         'token' => $client->token,
+                        'exam' => (new ExamRepository())->table(new Request(['id' => $client->exam]))->first(),
                     ]
                 ]);
             }

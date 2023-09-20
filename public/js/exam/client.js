@@ -3033,10 +3033,10 @@ var toastConfirmation = function toastConfirmation(props) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Exam/ExamPage.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Exam/ExamPage.js ***!
-  \*********************************************/
+/***/ "./resources/js/Pages/Exam/Client/ClientPage.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Pages/Exam/Client/ClientPage.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3047,12 +3047,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _Components_Authentication__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Authentication */ "./resources/js/Components/Authentication.js");
-/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Layout */ "./resources/js/Components/Layout.js");
-/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Toaster */ "./resources/js/Components/Toaster.js");
-/* harmony import */ var _Services_examService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Services/examService */ "./resources/js/Services/examService.js");
-/* harmony import */ var _Mixed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Mixed */ "./resources/js/Pages/Exam/Mixed.js");
-/* harmony import */ var _FormExam__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormExam */ "./resources/js/Pages/Exam/FormExam.js");
+/* harmony import */ var _Components_Authentication__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Components/Authentication */ "./resources/js/Components/Authentication.js");
+/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Components/Toaster */ "./resources/js/Components/Toaster.js");
+/* harmony import */ var _Services_examService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Services/examService */ "./resources/js/Services/examService.js");
+/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Components/Layout */ "./resources/js/Components/Layout.js");
+/* harmony import */ var _FormClient__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormClient */ "./resources/js/Pages/Exam/Client/FormClient.js");
+/* harmony import */ var _Mixed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Mixed */ "./resources/js/Pages/Exam/Client/Mixed.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -3078,37 +3078,55 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var ExamPage = /*#__PURE__*/function (_React$Component) {
-  _inherits(ExamPage, _React$Component);
-  var _super = _createSuper(ExamPage);
-  function ExamPage(props) {
+var ClientPage = /*#__PURE__*/function (_React$Component) {
+  _inherits(ClientPage, _React$Component);
+  var _super = _createSuper(ClientPage);
+  function ClientPage(props) {
     var _this;
-    _classCallCheck(this, ExamPage);
+    _classCallCheck(this, ClientPage);
     _this = _super.call(this, props);
     _this.state = {
       user: JSON.parse(localStorage.getItem('user')),
       exams: {
-        loading: false,
+        loading: true,
+        data: []
+      },
+      clients: {
+        loading: true,
         data: []
       },
       form: {
         open: false,
         data: null
       }
-    }; //state itu variabel yang disimpan dan nanti akan digunakan
-    _this.toggleForm = _this.toggleForm.bind(_assertThisInitialized(_this)); //definisikan disini dulu methodnya biar nanti bisa punya akses ke state yang diatas
+    };
+    _this.toggleForm = _this.toggleForm.bind(_assertThisInitialized(_this));
     _this.loadExam = _this.loadExam.bind(_assertThisInitialized(_this));
+    _this.loadClient = _this.loadClient.bind(_assertThisInitialized(_this));
     _this.confirmDelete = _this.confirmDelete.bind(_assertThisInitialized(_this));
     return _this;
   }
-  _createClass(ExamPage, [{
+  _createClass(ClientPage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
-      //fungsi pada saat pertama kali jalan
       (0,_Components_Authentication__WEBPACK_IMPORTED_MODULE_2__.checkAuth)().then(function () {
-        return _this2.loadExam();
-      }); //method chain setelah checkAuth selesai, maka akan menjalankan method loadExam
+        var exams = _this2.state.exams;
+        exams.loading = false;
+        _this2.setState({
+          exams: exams
+        }, function () {
+          return _this2.loadExam();
+        });
+      }).then(function () {
+        var clients = _this2.state.clients;
+        clients.loading = false;
+        _this2.setState({
+          clients: clients
+        }, function () {
+          return _this2.loadClient();
+        });
+      });
     }
   }, {
     key: "confirmDelete",
@@ -3119,13 +3137,13 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
           app: this,
           method: 'delete',
           icon: 'error',
-          inputName: 'data_ujian',
-          url: "".concat(window.origin, "/api/exam"),
-          title: 'Hapus Ujian',
-          message: "Anda yakin ingin menghapus Data Ujian <strong>".concat(data.label, "</strong>?<br/>Data yang berhubungan akan ikut dihapus.<br/>Lanjutkan hapus data ujian?"),
-          callback: 'props.app.loadExam()'
+          inputName: 'data_client',
+          url: "".concat(window.origin, "/api/exam/client"),
+          title: 'Hapus Server Client Ujian',
+          message: "Anda yakin ingin menghapus Data Server Client Ujian <strong>".concat(data.label, "</strong>?<br/>Data yang berhubungan akan ikut dihapus.<br/>Lanjutkan hapus data server client ujian?"),
+          callback: 'props.app.loadClient()'
         };
-        (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_4__.toastConfirmation)(options);
+        (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastConfirmation)(options);
       }
     }
   }, {
@@ -3151,26 +3169,23 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
                 _context.next = 16;
                 break;
               }
-              //pastikan kalau exam tidak sedang loading
               exams = this.state.exams;
-              exams.loading = true; //rubah state exams.loading
+              exams.loading = true;
               this.setState({
                 exams: exams
-              }); //rubah state exams
+              });
               _context.prev = 4;
               _context.next = 7;
-              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_5__.crudExam)();
+              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_4__.crudExam)();
             case 7:
               response = _context.sent;
               if (response.data.status_data === null) {
-                //jika status data dari response adalah null
                 exams.loading = false;
                 this.setState({
                   exams: exams
                 });
-                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_4__.toastError)(response.data.status_message);
+                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastError)(response.data.status_message);
               } else {
-                //jika status data dari response tidak null
                 exams.loading = false;
                 exams.data = response.data.status_data;
                 this.setState({
@@ -3186,7 +3201,7 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
               this.setState({
                 exams: exams
               });
-              (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_4__.toastException)(_context.t0);
+              (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastException)(_context.t0);
             case 16:
             case "end":
               return _context.stop();
@@ -3199,87 +3214,473 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
       return loadExam;
     }()
   }, {
+    key: "loadClient",
+    value: function () {
+      var _loadClient = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var clients, response;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              if (this.state.clients.loading) {
+                _context2.next = 16;
+                break;
+              }
+              clients = this.state.clients;
+              clients.loading = true;
+              this.setState({
+                clients: clients
+              });
+              _context2.prev = 4;
+              _context2.next = 7;
+              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_4__.crudClient)();
+            case 7:
+              response = _context2.sent;
+              if (response.data.status_data === null) {
+                clients.loading = false;
+                this.setState({
+                  clients: clients
+                });
+                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastError)(response.data.status_message);
+              } else {
+                clients.loading = false;
+                clients.data = response.data.status_data;
+                this.setState({
+                  clients: clients
+                });
+              }
+              _context2.next = 16;
+              break;
+            case 11:
+              _context2.prev = 11;
+              _context2.t0 = _context2["catch"](4);
+              clients.loading = false;
+              this.setState({
+                clients: clients
+              });
+              (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastException)(_context2.t0);
+            case 16:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2, this, [[4, 11]]);
+      }));
+      function loadClient() {
+        return _loadClient.apply(this, arguments);
+      }
+      return loadClient;
+    }()
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_3__.HeaderAndSideBar, _extends({
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__.HeaderAndSideBar, _extends({
         route: this.props.route
       }, this.state)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "content-wrapper"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_3__.PageHeader, {
-        title: "Ujian",
-        childrens: []
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__.PageHeader, {
+        title: "Server Client Ujian",
+        children: [{
+          url: "".concat(window.origin, "/exam"),
+          label: 'Ujian'
+        }]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
         className: "content"
-      }, this.state.form.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormExam__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, this.state.form.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormClient__WEBPACK_IMPORTED_MODULE_6__["default"], {
         open: this.state.form.open,
         data: this.state.form.data,
-        handleUpdate: this.loadExam,
-        handleClose: this.toggleForm
+        exams: this.state.exams,
+        handleExam: this.loadExam,
+        handleClose: this.toggleForm,
+        handleUpdate: this.loadClient
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "card card-outline card-primary"
-      }, this.state.exams.loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      }, this.state.clients.loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "overlay"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamPageCardHeader, {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_7__.ClientPageCardHeader, {
         onForm: this.toggleForm,
-        onReload: this.loadExam
+        onReload: this.loadClient
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "card-body p-0"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "table-responsive"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", {
         className: "table mb-0 table-sm table-borderless table-striped table-hover"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamPageTableHeader, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, this.state.exams.data.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
-        colSpan: 6,
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_7__.ClientTableHeader, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, this.state.clients.data.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+        colSpan: 5,
         className: "align-middle text-center"
-      }, this.state.exams.loading ? 'Memuat data' : 'Data tidak ditemukan')) : this.state.exams.data.map(function (item) {
+      }, this.state.clients.loading ? 'Memuat data ...' : 'Data tidak ditemukan')) : this.state.clients.data.map(function (item) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
+          onDoubleClick: function onDoubleClick() {
+            return _this3.toggleForm(item);
+          },
           key: item.value
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle pl-2"
+        }, item.meta.code), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+          className: "align-middle"
         }, item.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle"
-        }, (0,_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamQuestionBadge)({
-          item: item
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+        }, item.meta.exam.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle"
-        }, (0,_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamAnswerBadge)({
-          item: item
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
-          className: "align-middle"
-        }, (0,_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamResultBadge)({
-          item: item
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+        }, item.meta.token), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle pr-2"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
           className: "btn-group btn-group-sm"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
           onClick: function onClick() {
             return _this3.toggleForm(item);
-          },
-          type: "button",
-          className: "btn btn-primary"
+          }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-          className: "fas fa-pencil-alt"
+          className: "fas fa-2xs fa-pencil-alt"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+          type: "button",
+          className: "btn btn-danger",
           onClick: function onClick() {
             return _this3.confirmDelete(item);
-          },
-          type: "button",
-          className: "btn btn-danger"
+          }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-          className: "fas fa-trash-alt"
+          className: "fas fa-2xs fa-trash-alt"
         })))));
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tfoot", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamPageTableHeader, null)))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_3__.MainFooter, null));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tfoot", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_7__.ClientTableHeader, null)))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__.MainFooter, null));
     }
   }]);
-  return ExamPage;
+  return ClientPage;
 }((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ExamPage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClientPage);
 var root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('main-container'));
-root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ExamPage, {
-  route: "exam"
+root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ClientPage, {
+  route: "client"
 })));
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Exam/Client/FormClient.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Pages/Exam/Client/FormClient.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Components/Toaster */ "./resources/js/Components/Toaster.js");
+/* harmony import */ var _Services_examService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Services/examService */ "./resources/js/Services/examService.js");
+/* harmony import */ var _FormExam__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FormExam */ "./resources/js/Pages/Exam/FormExam.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var FormClient = /*#__PURE__*/function (_React$Component) {
+  _inherits(FormClient, _React$Component);
+  var _super = _createSuper(FormClient);
+  function FormClient(props) {
+    var _this;
+    _classCallCheck(this, FormClient);
+    _this = _super.call(this, props);
+    _this.state = {
+      loading: false,
+      form: {
+        id: null,
+        exam: '',
+        name: ''
+      },
+      form_exam: {
+        open: false,
+        data: null
+      }
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.toggleForm = _this.toggleForm.bind(_assertThisInitialized(_this));
+    _this.handleUpdateExam = _this.handleUpdateExam.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+  _createClass(FormClient, [{
+    key: "toggleForm",
+    value: function toggleForm() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var form_exam = this.state.form_exam;
+      form_exam.open = !this.state.form_exam.open;
+      form_exam.data = data;
+      this.setState({
+        form_exam: form_exam
+      });
+    }
+  }, {
+    key: "handleUpdateExam",
+    value: function handleUpdateExam(data) {
+      var form = this.state.form;
+      form.exam = data.value;
+      this.setState({
+        form: form
+      });
+      this.props.handleExam(data);
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var form = this.state.form;
+      if (typeof this.props.open !== "undefined" && this.props.open) {
+        if (typeof this.props.data !== "undefined" && this.props.data !== null) {
+          if (form.id === null) {
+            form.id = this.props.data.value;
+            form.exam = this.props.data.meta.exam.value;
+            form.name = this.props.data.label;
+          }
+        }
+      }
+      this.setState({
+        form: form
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      var form = this.state.form;
+      form[event.target.name] = event.target.value;
+      this.setState({
+        form: form
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function () {
+      var _handleSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
+        var formData, response;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              event.preventDefault();
+              if (this.state.loading) {
+                _context.next = 19;
+                break;
+              }
+              this.setState({
+                loading: true
+              });
+              _context.prev = 3;
+              formData = new FormData();
+              formData.append('_method', this.state.form.id === null ? 'put' : 'patch');
+              if (this.state.form.id !== null) formData.append('data_client', this.state.form.id);
+              if (this.state.form.exam.length > 0) formData.append('ujian', this.state.form.exam);
+              formData.append('nama_client', this.state.form.name);
+              _context.next = 11;
+              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_2__.crudClient)(formData);
+            case 11:
+              response = _context.sent;
+              if (response.data.params === null) {
+                this.setState({
+                  loading: false
+                });
+                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastError)(response.data.status_message);
+              } else {
+                this.setState({
+                  loading: false
+                });
+                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastSuccess)(response.data.status_message);
+                this.props.handleUpdate();
+                this.props.handleClose();
+              }
+              _context.next = 19;
+              break;
+            case 15:
+              _context.prev = 15;
+              _context.t0 = _context["catch"](3);
+              this.setState({
+                loading: false
+              });
+              (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastException)(_context.t0);
+            case 19:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this, [[3, 15]]);
+      }));
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+      return handleSubmit;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+      return this.state.form_exam.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormExam__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        data: this.state.form_exam.data,
+        handleClose: this.toggleForm,
+        open: this.state.form_exam.open,
+        handleUpdate: this.handleUpdateExam
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "card card-outline ".concat(this.state.form.id === null ? 'card-primary' : 'card-info')
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+        className: "card-title"
+      }, "Formulir ", this.state.form.id === null ? 'Tambah' : 'Rubah', " Server Client Ujian")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "card-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-7"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+        onChange: this.handleChange,
+        name: "exam",
+        value: this.state.form.exam,
+        className: "custom-select",
+        disabled: this.state.loading
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+        value: ""
+      }, "=== Pilih Ujian ==="), this.props.exams.data.map(function (item) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+          key: item.value,
+          value: item.value
+        }, item.label);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        title: "Buat data ujian baru",
+        disabled: this.state.loading,
+        type: "button",
+        className: "btn btn-default btn-sm mr-1",
+        onClick: function onClick() {
+          return _this2.toggleForm();
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas fa-2xs fa-plus"
+      })), this.state.form.exam.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        title: "Rubah data ujian ini",
+        disabled: this.state.loading,
+        type: "button",
+        className: "btn btn-primary btn-sm",
+        onClick: function onClick() {
+          var index = _this2.props.exams.data.findIndex(function (f) {
+            return f.value === _this2.state.form.exam;
+          });
+          if (index >= 0) {
+            _this2.toggleForm(_this2.props.exams.data[index]);
+          }
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas fa-2xs fa-pencil-alt"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Nama Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-9"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+        value: this.state.form.name,
+        name: "name",
+        onChange: this.handleChange,
+        className: "form-control",
+        disabled: this.state.loading
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "card-footer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "d-flex justify-content-between"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        type: "submit",
+        className: "btn btn-primary"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas mr-1 ".concat(this.state.loading ? 'fa-circle-notch fa-spin' : 'fa-save')
+      }), this.state.form.id === null ? 'Tambah' : 'Simpan'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        onClick: function onClick() {
+          return _this2.props.handleClose();
+        },
+        type: "button",
+        className: "btn btn-default"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas fa-times mr-1"
+      }), " Tutup"))));
+    }
+  }]);
+  return FormClient;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormClient);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Exam/Client/Mixed.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Exam/Client/Mixed.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ClientPageCardHeader: () => (/* binding */ ClientPageCardHeader),
+/* harmony export */   ClientTableHeader: () => (/* binding */ ClientTableHeader)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var ClientPageCardHeader = function ClientPageCardHeader(_ref) {
+  var props = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    className: "card-title"
+  }, "Data Server Client Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "card-tools"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    className: "btn btn-sm btn-primary mr-1",
+    onClick: function onClick() {
+      return props.onForm();
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fas fa-plus mr-1"
+  }), " Tambah"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    className: "btn btn-sm btn-default",
+    onClick: props.onReload
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fas fa-2xs fa-refresh"
+  }))));
+};
+var ClientTableHeader = function ClientTableHeader() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    width: 100,
+    className: "align-middle pl-2"
+  }, "ID Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "align-middle"
+  }, "Nama Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "align-middle"
+  }, "Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "align-middle"
+  }, "Token"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    width: 50,
+    className: "align-middle pr-2"
+  }, "Aksi"));
+};
 
 /***/ }),
 
@@ -3558,121 +3959,6 @@ var FormExam = /*#__PURE__*/function (_React$Component) {
   return FormExam;
 }((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormExam);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Exam/Mixed.js":
-/*!******************************************!*\
-  !*** ./resources/js/Pages/Exam/Mixed.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ExamAnswerBadge: () => (/* binding */ ExamAnswerBadge),
-/* harmony export */   ExamPageCardHeader: () => (/* binding */ ExamPageCardHeader),
-/* harmony export */   ExamPageTableHeader: () => (/* binding */ ExamPageTableHeader),
-/* harmony export */   ExamQuestionBadge: () => (/* binding */ ExamQuestionBadge),
-/* harmony export */   ExamResultBadge: () => (/* binding */ ExamResultBadge)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var ExamPageTableHeader = function ExamPageTableHeader() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    className: "text-sm align-middle pl-2"
-  }, "Judul Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    width: 100,
-    className: "text-sm align-middle"
-  }, "Soal"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    width: 100,
-    className: "text-sm align-middle"
-  }, "PG"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    width: 100,
-    className: "text-sm align-middle"
-  }, "Hasil"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    width: 50,
-    className: "text-sm align-middle pr-2"
-  }, "Aksi"));
-};
-var ExamPageCardHeader = function ExamPageCardHeader(_ref) {
-  var props = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "card-header"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "card-title"
-  }, "Data Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "card-tools"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    type: "button",
-    className: "btn btn-sm btn-primary mr-1",
-    onClick: function onClick() {
-      return props.onForm();
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "fas fa-plus mr-1"
-  }), " Tambah"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    type: "button",
-    className: "btn btn-sm btn-default",
-    onClick: props.onReload
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "fas fa-xs fa-refresh"
-  }))));
-};
-var ExamQuestionBadge = function ExamQuestionBadge(_ref2) {
-  var props = _extends({}, (_objectDestructuringEmpty(_ref2), _ref2));
-  var options = {
-    className: 'badge-secondary',
-    label: 'UND'
-  };
-  if (typeof props.item !== "undefined" && props.item !== null) {
-    if (props.item.meta.random.question) {
-      options.className = 'badge-primary', options.label = 'Diacak';
-    } else {
-      options.className = 'badge-warning', options.label = 'Tidak Diacak';
-    }
-  }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "".concat(options.className, " text-xs px-3 py-2 d-block badge")
-  }, options.label);
-};
-var ExamAnswerBadge = function ExamAnswerBadge(_ref3) {
-  var props = _extends({}, (_objectDestructuringEmpty(_ref3), _ref3));
-  var options = {
-    className: 'badge-secondary',
-    label: 'UND'
-  };
-  if (typeof props.item !== "undefined" && props.item !== null) {
-    if (props.item.meta.random.answer) {
-      options.className = 'badge-primary', options.label = 'Diacak';
-    } else {
-      options.className = 'badge-warning', options.label = 'Tidak Diacak';
-    }
-  }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "".concat(options.className, " text-xs px-3 py-2 d-block badge")
-  }, options.label);
-};
-var ExamResultBadge = function ExamResultBadge(_ref4) {
-  var props = _extends({}, (_objectDestructuringEmpty(_ref4), _ref4));
-  var options = {
-    className: 'badge-secondary',
-    label: 'UND'
-  };
-  if (typeof props.item !== "undefined" && props.item !== null) {
-    if (props.item.meta.show_result) {
-      options.className = 'badge-primary', options.label = 'Diperlihatkan';
-    } else {
-      options.className = 'badge-warning', options.label = 'Tidak Diperlihatkan';
-    }
-  }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "".concat(options.className, " text-xs px-3 py-2 d-block badge")
-  }, options.label);
-};
 
 /***/ }),
 
@@ -57833,10 +58119,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!****************************************!*\
-  !*** ./resources/js/src/exam/index.js ***!
-  \****************************************/
-__webpack_require__(/*! ../../Pages/Exam/ExamPage */ "./resources/js/Pages/Exam/ExamPage.js");
+/*!*****************************************!*\
+  !*** ./resources/js/src/exam/client.js ***!
+  \*****************************************/
+__webpack_require__(/*! ../../Pages/Exam/Client/ClientPage */ "./resources/js/Pages/Exam/Client/ClientPage.js");
 })();
 
 /******/ })()

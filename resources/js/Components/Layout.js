@@ -6,22 +6,24 @@ import {logout} from "./Authentication";
 const adminMenu = [
     { value: 'exam', label: 'Ujian', icon: 'fas fa-book-open', url: `${window.origin}/exam`,
         children: [
-            { value: 'schedule', label: 'Jadwal Ujian', icon: 'fas fa-calendar', url: `${window.origin}/exam/schedule`, children: [] },
-            { value: 'client', label: 'Server Client', icon: 'fas fa-server', url: `${window.origin}/exam/client`, children: [] },
-            { value: 'participant', label: 'Peserta', icon: 'fas fa-users', url: `${window.origin}/exam/participant`, children: [] },
-        ]
+            { value: 'schedule', label: 'Jadwal Ujian', icon: 'fas fa-calendar', url: `${window.origin}/exam/schedule`, children: [], child_route: ['schedule'] },
+            { value: 'client', label: 'Server Client', icon: 'fas fa-server', url: `${window.origin}/exam/client`, children: [], child_route: ['client'] },
+            { value: 'participant', label: 'Peserta', icon: 'fas fa-users', url: `${window.origin}/exam/participant`, children: [], child_route: ['participant'] },
+        ],
+        child_route: ['schedule','client','participant','exam'],
     },
 ];
 const userMenu = [
     { value: 'course', label: 'Mata Pelajaran', icon: 'fas fa-book', url: `${window.origin}/course`,
         children: [
-            { value: 'topic', label: 'Bank Soal', icon: 'fas fa-tag', url: `${window.origin}/course/topic`, children: [] }
-        ]
+            { value: 'topic', label: 'Bank Soal', icon: 'fas fa-tag', url: `${window.origin}/course/topic`, children: [], child_route: ['topic'] }
+        ],
+        child_route: ['topic','course'],
     },
 ];
 const superMenu = [
-    { value: 'major', label: 'Jurusan', icon: 'fas fa-traffic-light', url: `${window.origin}/major`, children: [] },
-    { value: 'user', label: 'Pengguna', icon: 'fas fa-user-secret', url: `${window.origin}/user`, children: [] },
+    { value: 'major', label: 'Jurusan', icon: 'fas fa-traffic-light', url: `${window.origin}/major`, children: [], child_route: ['major'], },
+    { value: 'user', label: 'Pengguna', icon: 'fas fa-user-secret', url: `${window.origin}/user`, children: [], child_route: ['user'] },
 ];
 const MainHeader = ({...props})=> {
     return (
@@ -115,7 +117,7 @@ const MainSideBarMenuNoChildren = ({...props})=> {
 }
 const MainSideBarMenuHasChildren = ({...props})=> {
     return (
-        <li className={`nav-item ${props.route === props.menu.value ? 'menu-open' : ''}`}>
+        <li className={`nav-item ${props.menu.child_route.findIndex((f)=> f === props.route) >= 0 ? 'menu-open' : ''}`}>
             <a href="#" className={`nav-link ${props.route === props.menu.value ? 'active' : ''}`}>
                 <i className={`nav-icon ${props.menu.icon}`}/>
                 <p>

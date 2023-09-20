@@ -86,20 +86,24 @@ var adminMenu = [{
     label: 'Jadwal Ujian',
     icon: 'fas fa-calendar',
     url: "".concat(window.origin, "/exam/schedule"),
-    children: []
+    children: [],
+    child_route: ['schedule']
   }, {
     value: 'client',
     label: 'Server Client',
     icon: 'fas fa-server',
     url: "".concat(window.origin, "/exam/client"),
-    children: []
+    children: [],
+    child_route: ['client']
   }, {
     value: 'participant',
     label: 'Peserta',
     icon: 'fas fa-users',
     url: "".concat(window.origin, "/exam/participant"),
-    children: []
-  }]
+    children: [],
+    child_route: ['participant']
+  }],
+  child_route: ['schedule', 'client', 'participant', 'exam']
 }];
 var userMenu = [{
   value: 'course',
@@ -111,21 +115,25 @@ var userMenu = [{
     label: 'Bank Soal',
     icon: 'fas fa-tag',
     url: "".concat(window.origin, "/course/topic"),
-    children: []
-  }]
+    children: [],
+    child_route: ['topic']
+  }],
+  child_route: ['topic', 'course']
 }];
 var superMenu = [{
   value: 'major',
   label: 'Jurusan',
   icon: 'fas fa-traffic-light',
   url: "".concat(window.origin, "/major"),
-  children: []
+  children: [],
+  child_route: ['major']
 }, {
   value: 'user',
   label: 'Pengguna',
   icon: 'fas fa-user-secret',
   url: "".concat(window.origin, "/user"),
-  children: []
+  children: [],
+  child_route: ['user']
 }];
 var MainHeader = function MainHeader(_ref) {
   var props = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
@@ -260,7 +268,9 @@ var MainSideBarMenuNoChildren = function MainSideBarMenuNoChildren(_ref3) {
 var MainSideBarMenuHasChildren = function MainSideBarMenuHasChildren(_ref4) {
   var props = _extends({}, (_objectDestructuringEmpty(_ref4), _ref4));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item ".concat(props.route === props.menu.value ? 'menu-open' : '')
+    className: "nav-item ".concat(props.menu.child_route.findIndex(function (f) {
+      return f === props.route;
+    }) >= 0 ? 'menu-open' : '')
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "#",
     className: "nav-link ".concat(props.route === props.menu.value ? 'active' : '')
