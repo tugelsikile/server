@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {checkAuth} from "../../Components/Authentication";
-import {HeaderAndSideBar} from "../../Components/Layout";
+import {HeaderAndSideBar, MainFooter} from "../../Components/Layout";
 
 class DashboardPage extends React.Component {
     constructor(props) {
@@ -61,10 +61,13 @@ class DashboardPage extends React.Component {
 
                     </section>
                 </div>
+                <MainFooter/>
             </React.StrictMode>
         )
     }
 }
+
 export default DashboardPage;
 const root = ReactDOM.createRoot(document.getElementById('main-container'));
 root.render(<React.StrictMode><DashboardPage route="dashboard"/></React.StrictMode>)
+

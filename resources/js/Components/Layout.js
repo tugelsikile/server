@@ -1,4 +1,6 @@
 import React from "react";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {logout} from "./Authentication";
 
 const adminMenu = [
@@ -144,8 +146,47 @@ const MainSideBarMenu = ({...props})=> {
 export const HeaderAndSideBar = ({...props})=> {
     return (
         <React.Fragment>
+            <ToastContainer/>
             <MainHeader {...props}/>
             <MainSideBar {...props}/>
         </React.Fragment>
+    )
+}
+export const MainFooter = ()=> {
+    return (
+        <footer className="main-footer">
+            <div className="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
+            </div>
+            <strong>Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
+    )
+}
+export const PageHeader = ({...props})=> {
+    return (
+        <section className="content-header">
+            <div className="container-fluid">
+                <div className="row mb-2">
+                    <div className="col-sm-6">
+                        <h1>{typeof props.title !== "undefined" && props.title}</h1>
+                    </div>
+                    <div className="col-sm-6">
+                        <ol className="breadcrumb float-sm-right">
+                            <li className="breadcrumb-item"><a href={`${window.origin}/home`}>Home</a></li>
+                            {typeof props.children !== "undefined" && Array.isArray(props.children) && props.children.length > 0 &&
+                                props.children.map((item,index)=>
+                                    <li key={`breadcrumb-${index}`} className="breadcrumb-item">
+                                        <a href={typeof item.url === "undefined" ? '#' : item.url}>{typeof item.label !== "undefined" && item.label}</a>
+                                    </li>
+                                )
+                            }
+                            {typeof props.title !== "undefined" &&
+                                <li className="breadcrumb-item active">{props.title}</li>
+                            }
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }

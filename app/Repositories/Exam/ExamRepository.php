@@ -57,7 +57,13 @@ class ExamRepository
             }
             $exam->name = $request['nama_ujian'];
             $exam->description = '';
+            $exam->random_question = false;
+            $exam->random_answer = false;
+            $exam->show_result = false;
             if ($request->has('keterangan')) $exam->description = $request['keterangan'];
+            if ($request->has('acak_soal') && $request['acak_soal'] == 'ya') $exam->random_question = true;
+            if ($request->has('acak_pilihan_ganda') && $request['acak_pilihan_ganda'] == 'ya') $exam->random_answer = true;
+            if ($request->has('tampilkan_hasil') && $request['tampilkan_hasil'] == 'ya') $exam->show_result = true;
             $exam->save();
 
             return $this->table(new Request(['id' => $exam->id]))->first();

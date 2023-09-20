@@ -18,7 +18,10 @@ class ExamValidation
         try {
             $valid = Validator::make($request->all(),[
                 'nama_ujian' => 'required|string|min:1',
-                'keterangan' => 'nullable'
+                'keterangan' => 'nullable',
+                'acak_soal' => 'required|in:ya,tidak',
+                'acak_pilihan_ganda' => 'required|in:ya,tidak',
+                'tampilkan_hasil' => 'required|in:ya,tidak',
             ]);
             if ($valid->fails()) throw new Exception(collect($valid->errors()->all())->join("\n"),400);
             return $request;
@@ -38,7 +41,10 @@ class ExamValidation
             $valid = Validator::make($request->all(),[
                 'data_ujian' => 'required|exists:exams,id',
                 'nama_ujian' => 'required|string|min:1',
-                'keterangan' => 'nullable'
+                'keterangan' => 'nullable',
+                'acak_soal' => 'required|in:ya,tidak',
+                'acak_pilihan_ganda' => 'required|in:ya,tidak',
+                'tampilkan_hasil' => 'required|in:ya,tidak',
             ]);
             if ($valid->fails()) throw new Exception(collect($valid->errors()->all())->join("\n"),400);
             return $request;

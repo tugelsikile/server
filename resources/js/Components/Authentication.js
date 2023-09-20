@@ -1,4 +1,4 @@
-export const checkAuth = ()=> {
+export const checkAuth = async ()=> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     if (token === null || user === null) {
