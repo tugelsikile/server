@@ -3234,6 +3234,9 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
         className: "align-middle text-center"
       }, this.state.exams.loading ? 'Memuat data' : 'Data tidak ditemukan')) : this.state.exams.data.map(function (item) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
+          onDoubleClick: function onDoubleClick() {
+            return _this3.toggleForm(item);
+          },
           key: item.value
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle pl-2"
@@ -3260,7 +3263,7 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
           type: "button",
           className: "btn btn-primary"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-          className: "fas fa-pencil-alt"
+          className: "fas fa-2xs fa-pencil-alt"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
           onClick: function onClick() {
             return _this3.confirmDelete(item);
@@ -3268,7 +3271,7 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
           type: "button",
           className: "btn btn-danger"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-          className: "fas fa-trash-alt"
+          className: "fas fa-2xs fa-trash-alt"
         })))));
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tfoot", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_6__.ExamPageTableHeader, null)))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_3__.MainFooter, null));
     }
@@ -3619,7 +3622,7 @@ var ExamPageCardHeader = function ExamPageCardHeader(_ref) {
     className: "btn btn-sm btn-default",
     onClick: props.onReload
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "fas fa-xs fa-refresh"
+    className: "fas fa-2xs fa-refresh"
   }))));
 };
 var ExamQuestionBadge = function ExamQuestionBadge(_ref2) {

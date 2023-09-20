@@ -20,7 +20,7 @@ export const ExamPageCardHeader = ({...props})=> {
                     <i className="fas fa-plus mr-1"/> Tambah
                 </button>
                 <button type="button" className="btn btn-sm btn-default" onClick={props.onReload}>
-                    <i className="fas fa-xs fa-refresh"/>
+                    <i className="fas fa-2xs fa-refresh"/>
                 </button>
             </div>
         </div>

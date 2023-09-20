@@ -82,7 +82,7 @@ class ExamPage extends React.Component {
                                     <div className="table-responsive">
                                         <table className="table mb-0 table-sm table-borderless table-striped table-hover">
                                             <thead>
-                                            <ExamPageTableHeader/>
+                                                <ExamPageTableHeader/>
                                             </thead>
                                             <tbody>
                                             {this.state.exams.data.length === 0 ?
@@ -93,15 +93,15 @@ class ExamPage extends React.Component {
                                                 </tr>
                                                 :
                                                 this.state.exams.data.map((item)=>
-                                                    <tr key={item.value}>
+                                                    <tr onDoubleClick={()=>this.toggleForm(item)} key={item.value}>
                                                         <td className="align-middle pl-2">{item.label}</td>
                                                         <td className="align-middle">{ExamQuestionBadge({item:item})}</td>
                                                         <td className="align-middle">{ExamAnswerBadge({item:item})}</td>
                                                         <td className="align-middle">{ExamResultBadge({item:item})}</td>
                                                         <td className="align-middle pr-2">
                                                             <div className="btn-group btn-group-sm">
-                                                                <button onClick={()=>this.toggleForm(item)} type="button" className="btn btn-primary"><i className="fas fa-pencil-alt"/></button>
-                                                                <button onClick={()=>this.confirmDelete(item)} type="button" className="btn btn-danger"><i className="fas fa-trash-alt"/></button>
+                                                                <button onClick={()=>this.toggleForm(item)} type="button" className="btn btn-primary"><i className="fas fa-2xs fa-pencil-alt"/></button>
+                                                                <button onClick={()=>this.confirmDelete(item)} type="button" className="btn btn-danger"><i className="fas fa-2xs fa-trash-alt"/></button>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -109,7 +109,7 @@ class ExamPage extends React.Component {
                                             }
                                             </tbody>
                                             <tfoot>
-                                            <ExamPageTableHeader/>
+                                                <ExamPageTableHeader/>
                                             </tfoot>
                                         </table>
                                     </div>
