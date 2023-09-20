@@ -2,9 +2,10 @@
 	"info": {
 		"_postman_id": "5b920023-bd3e-4636-9e69-4d91790a402f",
 		"name": "UJIAN SERVER SMKMUHKDH",
+		"description": "API untuk aplikasi server ujian",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "11016197",
-		"_collection_link": "https://speeding-zodiac-280580.postman.co/workspace/9ea83497-ab76-43d6-8b54-fe2862aef3c9/collection/11016197-5b920023-bd3e-4636-9e69-4d91790a402f?action=share&source=collection_link&creator=11016197"
+		"_collection_link": "https://speeding-zodiac-280580.postman.co/workspace/My-Workspace~9ea83497-ab76-43d6-8b54-fe2862aef3c9/collection/11016197-5b920023-bd3e-4636-9e69-4d91790a402f?action=share&source=collection_link&creator=11016197"
 	},
 	"item": [
 		{
@@ -21,7 +22,14 @@
 									"const res = JSON.parse(responseBody);\r",
 									"const res_params = res.status_data\r",
 									"pm.environment.set(\"access_token\", res_params.token);\r",
-									""
+									"\r",
+									"pm.test('Status Test', function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test('Response Test', function(){\r",
+									"    pm.response.to.not.be.error;\r",
+									"    pm.response.to.have.jsonBody('status_data');\r",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -64,7 +72,7 @@
 								"login"
 							]
 						},
-						"description": "Login user"
+						"description": "Login pengguna"
 					},
 					"response": [
 						{
@@ -94,16 +102,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/auth/login",
-									"protocol": "https",
+									"raw": "{{api_url}}/auth/login",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"auth",
 										"login"
 									]
@@ -286,7 +289,8 @@
 								"auth",
 								"logout"
 							]
-						}
+						},
+						"description": "Revoke akses pengguna yang saat ini sedang login"
 					},
 					"response": [
 						{
@@ -301,16 +305,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/auth/logout",
-									"protocol": "https",
+									"raw": "{{api_url}}/auth/logout",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"auth",
 										"logout"
 									]
@@ -404,7 +403,8 @@
 								"auth",
 								"me"
 							]
-						}
+						},
+						"description": "Digunakan untuk melihat detail pengguna yang saat ini sedang login"
 					},
 					"response": [
 						{
@@ -419,16 +419,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/auth/me",
-									"protocol": "https",
+									"raw": "{{api_url}}/auth/me",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"auth",
 										"me"
 									]
@@ -493,7 +488,7 @@
 					]
 				}
 			],
-			"description": "Authorization section"
+			"description": "**Otorisasi api.**\n\nDigunakan untuk hampir semua request pada api ini."
 		},
 		{
 			"name": "Exam",
@@ -501,6 +496,532 @@
 				{
 					"name": "Client",
 					"item": [
+						{
+							"name": "Participant",
+							"item": [
+								{
+									"name": "Get All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "string or array",
+													"type": "text"
+												},
+												{
+													"key": "exam",
+													"value": "",
+													"description": "exam id",
+													"type": "text"
+												},
+												{
+													"key": "client",
+													"value": "",
+													"description": "exam client id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/exam/client/participant",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"exam",
+												"client",
+												"participant"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "id",
+															"value": "",
+															"description": "string or array",
+															"type": "text"
+														},
+														{
+															"key": "exam",
+															"value": "",
+															"description": "exam id",
+															"type": "text"
+														},
+														{
+															"key": "client",
+															"value": "",
+															"description": "exam client id",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{api_url}}/exam/client/participant",
+													"host": [
+														"{{api_url}}"
+													],
+													"path": [
+														"exam",
+														"client",
+														"participant"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 20 Sep 2023 03:56:57 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+												},
+												{
+													"key": "Vary",
+													"value": "Authorization"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.33"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "600"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "598"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5, max=100"
+												},
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": [\n        {\n            \"value\": \"fcb091c7-42f9-4867-ba57-38de1998b287\",\n            \"label\": \"Gara Wasita\",\n            \"meta\": {\n                \"code\": \"23090020001\",\n                \"user\": {\n                    \"value\": \"86d7fa51-72cc-394d-8b34-f50c11b29c2f\",\n                    \"label\": \"Gara Wasita\",\n                    \"meta\": {\n                        \"email\": \"usamah.jati@example.com\",\n                        \"level\": \"participant\",\n                        \"major\": {\n                            \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n                            \"label\": \"Teknik Komputer dan Jaringan\",\n                            \"meta\": {\n                                \"code\": \"TKJT\"\n                            }\n                        },\n                        \"class_level\": 12\n                    }\n                }\n            }\n        },\n        {\n            \"value\": \"31e9248d-fdce-47ba-83fb-c0c0ee4f9b35\",\n            \"label\": \"Kayun Vino Pratama M.Kom.\",\n            \"meta\": {\n                \"code\": \"23090020002\",\n                \"user\": {\n                    \"value\": \"8046f952-c5ed-3b4f-adf8-99e2cc39fc8c\",\n                    \"label\": \"Kayun Vino Pratama M.Kom.\",\n                    \"meta\": {\n                        \"email\": \"hana.hastuti@example.org\",\n                        \"level\": \"participant\",\n                        \"major\": {\n                            \"value\": \"40f9001a-64cd-4fa5-9afa-d8e454fc6a60\",\n                            \"label\": \"Teknik Otomotif Kendaraan Ringan\",\n                            \"meta\": {\n                                \"code\": \"TKRO\"\n                            }\n                        },\n                        \"class_level\": 12\n                    }\n                }\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Create",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "ujian",
+													"value": "{{exam_id}}",
+													"type": "text"
+												},
+												{
+													"key": "client",
+													"value": "{{exam_client_id}}",
+													"description": "exam client id",
+													"type": "text"
+												},
+												{
+													"key": "peserta[0][nama_peserta]",
+													"value": "86d7fa51-72cc-394d-8b34-f50c11b29c2f",
+													"type": "text"
+												},
+												{
+													"key": "peserta[1][nama_peserta]",
+													"value": "8046f952-c5ed-3b4f-adf8-99e2cc39fc8c",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/exam/client/participant",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"exam",
+												"client",
+												"participant"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "ujian",
+															"value": "{{exam_id}}",
+															"type": "text"
+														},
+														{
+															"key": "client",
+															"value": "{{exam_client_id}}",
+															"description": "exam client id",
+															"type": "text"
+														},
+														{
+															"key": "peserta[0][nama_peserta]",
+															"value": "86d7fa51-72cc-394d-8b34-f50c11b29c2f",
+															"type": "text"
+														},
+														{
+															"key": "peserta[1][nama_peserta]",
+															"value": "8046f952-c5ed-3b4f-adf8-99e2cc39fc8c",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{api_url}}/exam/client/participant",
+													"host": [
+														"{{api_url}}"
+													],
+													"path": [
+														"exam",
+														"client",
+														"participant"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 20 Sep 2023 03:57:20 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+												},
+												{
+													"key": "Vary",
+													"value": "Authorization"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.33"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "600"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "597"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5, max=100"
+												},
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"Peserta berhasil ditambahkan\",\n    \"status_data\": [\n        {\n            \"value\": \"fcb091c7-42f9-4867-ba57-38de1998b287\",\n            \"label\": \"Gara Wasita\",\n            \"meta\": {\n                \"code\": \"23090020001\",\n                \"user\": {\n                    \"value\": \"86d7fa51-72cc-394d-8b34-f50c11b29c2f\",\n                    \"label\": \"Gara Wasita\",\n                    \"meta\": {\n                        \"email\": \"usamah.jati@example.com\",\n                        \"level\": \"participant\",\n                        \"major\": {\n                            \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n                            \"label\": \"Teknik Komputer dan Jaringan\",\n                            \"meta\": {\n                                \"code\": \"TKJT\"\n                            }\n                        },\n                        \"class_level\": 12\n                    }\n                }\n            }\n        },\n        {\n            \"value\": \"31e9248d-fdce-47ba-83fb-c0c0ee4f9b35\",\n            \"label\": \"Kayun Vino Pratama M.Kom.\",\n            \"meta\": {\n                \"code\": \"23090020002\",\n                \"user\": {\n                    \"value\": \"8046f952-c5ed-3b4f-adf8-99e2cc39fc8c\",\n                    \"label\": \"Kayun Vino Pratama M.Kom.\",\n                    \"meta\": {\n                        \"email\": \"hana.hastuti@example.org\",\n                        \"level\": \"participant\",\n                        \"major\": {\n                            \"value\": \"40f9001a-64cd-4fa5-9afa-d8e454fc6a60\",\n                            \"label\": \"Teknik Otomotif Kendaraan Ringan\",\n                            \"meta\": {\n                                \"code\": \"TKRO\"\n                            }\n                        },\n                        \"class_level\": 12\n                    }\n                }\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "peserta[0]",
+													"value": "8b7f7ef6-830d-4958-8d44-6b79a0defe77",
+													"description": "string or array",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/exam/client/participant",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"exam",
+												"client",
+												"participant"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "peserta[0]",
+															"value": "31e9248d-fdce-47ba-83fb-c0c0ee4f9b35",
+															"description": "string or array",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{api_url}}/exam/client/participant",
+													"host": [
+														"{{api_url}}"
+													],
+													"path": [
+														"exam",
+														"client",
+														"participant"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 20 Sep 2023 03:58:27 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+												},
+												{
+													"key": "Vary",
+													"value": "Authorization"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.33"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "600"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "597"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5, max=100"
+												},
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"Peserta berhasil dihapus\",\n    \"status_data\": true\n}"
+										},
+										{
+											"name": "Error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "peserta[0]",
+															"value": "31e9248d-fdce-47ba-83fb-c0c0ee4f9b35",
+															"description": "string or array",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{api_url}}/exam/client/participant",
+													"host": [
+														"{{api_url}}"
+													],
+													"path": [
+														"exam",
+														"client",
+														"participant"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 20 Sep 2023 03:58:38 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+												},
+												{
+													"key": "Vary",
+													"value": "Authorization"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.33"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "600"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "596"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 400,\n    \"status_message\": \"Peserta.0 yang dipilih tidak valid.\",\n    \"status_data\": null\n}"
+										}
+									]
+								}
+							]
+						},
 						{
 							"name": "Get All",
 							"event": [
@@ -606,16 +1127,11 @@
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
-											"protocol": "https",
+											"raw": "{{api_url}}/exam/client",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"exam",
 												"client"
 											]
@@ -754,16 +1270,11 @@
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
-											"protocol": "https",
+											"raw": "{{api_url}}/exam/client",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"exam",
 												"client"
 											]
@@ -912,16 +1423,11 @@
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
-											"protocol": "https",
+											"raw": "{{api_url}}/exam/client",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"exam",
 												"client"
 											]
@@ -1050,16 +1556,11 @@
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/exam/client",
-											"protocol": "https",
+											"raw": "{{api_url}}/exam/client",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"exam",
 												"client"
 											]
@@ -1123,7 +1624,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Server Client Ujian / Cluster Ujian\n\nDigunakan jika anda ingin menggunakan mode semi online. nantinya seluruh atau sebagian data akan didistribusikan ke dalam client ini"
 				},
 				{
 					"name": "Get All",
@@ -1295,6 +1797,21 @@
 									"key": "keterangan",
 									"value": "kanggo testing",
 									"type": "text"
+								},
+								{
+									"key": "acak_soal",
+									"value": "ya",
+									"type": "text"
+								},
+								{
+									"key": "acak_pilihan_ganda",
+									"value": "tidak",
+									"type": "text"
+								},
+								{
+									"key": "tampilkan_hasil",
+									"value": "ya",
+									"type": "text"
 								}
 							]
 						},
@@ -1430,6 +1947,21 @@
 								{
 									"key": "keterangan",
 									"value": "kanggo testing",
+									"type": "text"
+								},
+								{
+									"key": "acak_soal",
+									"value": "ya",
+									"type": "text"
+								},
+								{
+									"key": "acak_pilihan_ganda",
+									"value": "ya",
+									"type": "text"
+								},
+								{
+									"key": "tampilkan_hasil",
+									"value": "ya",
 									"type": "text"
 								}
 							]
@@ -1660,7 +2192,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Ujian"
 		},
 		{
 			"name": "Major",
@@ -1745,16 +2278,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/major",
-									"protocol": "https",
+									"raw": "{{api_url}}/major",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"major"
 									]
 								}
@@ -1883,16 +2411,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/major",
-									"protocol": "https",
+									"raw": "{{api_url}}/major",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"major"
 									]
 								}
@@ -2031,16 +2554,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/major",
-									"protocol": "https",
+									"raw": "{{api_url}}/major",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"major"
 									]
 								}
@@ -2159,16 +2677,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/major",
-									"protocol": "https",
+									"raw": "{{api_url}}/major",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"major"
 									]
 								}
@@ -2314,16 +2827,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/user",
-									"protocol": "https",
+									"raw": "{{api_url}}/user",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"user"
 									]
 								}
@@ -2496,16 +3004,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/user",
-									"protocol": "https",
+									"raw": "{{api_url}}/user",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"user"
 									]
 								}
@@ -2794,16 +3297,11 @@
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/user",
-									"protocol": "https",
+									"raw": "{{api_url}}/user",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"user"
 									]
 								}
@@ -3025,22 +3523,17 @@
 									"urlencoded": [
 										{
 											"key": "data_pengguna",
-											"value": "",
+											"value": "{{user_id}}",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/user",
-									"protocol": "https",
+									"raw": "{{api_url}}/user",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"user"
 									]
 								}
@@ -3186,7 +3679,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Pengguna api"
 		},
 		{
 			"name": "Course",
@@ -3194,6 +3688,392 @@
 				{
 					"name": "Topics",
 					"item": [
+						{
+							"name": "Question",
+							"item": [
+								{
+									"name": "Get All",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"let access_token = pm.environment.get(\"access_token\");\r",
+													"const response = JSON.parse(responseBody);\r",
+													"const responseData = response.status_data\r",
+													"if (Array.isArray(responseData)) {\r",
+													"    if (responseData.length > 0) {\r",
+													"        const data = responseData[0];\r",
+													"        if (typeof data.value !== \"undefined\") {\r",
+													"            pm.environment.set('question_id', data.value);\r",
+													"        }\r",
+													"    }\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{api_url}}/course/topic/question",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"course",
+												"topic",
+												"question"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{api_url}}/course/topic/question",
+													"host": [
+														"{{api_url}}"
+													],
+													"path": [
+														"course",
+														"topic",
+														"question"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 20 Sep 2023 02:39:20 GMT"
+												},
+												{
+													"key": "Server",
+													"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.33"
+												},
+												{
+													"key": "Vary",
+													"value": "Authorization"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.33"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "600"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "597"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5, max=100"
+												},
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"status_message\": \"ok\",\n    \"status_data\": [\n        {\n            \"value\": \"5a562332-09fc-4549-872f-21d1d5cdc91f\",\n            \"label\": \"ini adalah soal\",\n            \"meta\": {\n                \"topic\": {\n                    \"value\": \"de71f538-8e80-4a89-88ee-8b3a3cac9479\",\n                    \"label\": \"Ulangan Semester\",\n                    \"meta\": {\n                        \"code\": \"230920003\",\n                        \"course\": {\n                            \"value\": \"0739b748-ab6c-480e-aa2d-8c063948384f\",\n                            \"label\": \"Bahasa Indonesia\",\n                            \"meta\": {\n                                \"code\": \"BI\",\n                                \"major\": {\n                                    \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n                                    \"label\": \"Teknik Komputer dan Jaringan\",\n                                    \"meta\": {\n                                        \"code\": \"TKJT\"\n                                    }\n                                },\n                                \"level\": 10\n                            }\n                        }\n                    }\n                },\n                \"number\": 1,\n                \"type\": \"multi_choice\",\n                \"score\": {\n                    \"min\": 1,\n                    \"max\": 1\n                }\n            }\n        },\n        {\n            \"value\": \"8bdc4492-4f3e-4479-b65e-bd3ef257b8c3\",\n            \"label\": \"ini adalah soal\",\n            \"meta\": {\n                \"topic\": {\n                    \"value\": \"de71f538-8e80-4a89-88ee-8b3a3cac9479\",\n                    \"label\": \"Ulangan Semester\",\n                    \"meta\": {\n                        \"code\": \"230920003\",\n                        \"course\": {\n                            \"value\": \"0739b748-ab6c-480e-aa2d-8c063948384f\",\n                            \"label\": \"Bahasa Indonesia\",\n                            \"meta\": {\n                                \"code\": \"BI\",\n                                \"major\": {\n                                    \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n                                    \"label\": \"Teknik Komputer dan Jaringan\",\n                                    \"meta\": {\n                                        \"code\": \"TKJT\"\n                                    }\n                                },\n                                \"level\": 10\n                            }\n                        }\n                    }\n                },\n                \"number\": 1,\n                \"type\": \"multi_choice\",\n                \"score\": {\n                    \"min\": 1,\n                    \"max\": 1\n                }\n            }\n        },\n        {\n            \"value\": \"043a14b2-1dbc-4add-97e0-8b2bdb57813f\",\n            \"label\": \"Ini adalah soal bentuk satu baris tanpa kunci jawaban\",\n            \"meta\": {\n                \"topic\": {\n                    \"value\": \"de71f538-8e80-4a89-88ee-8b3a3cac9479\",\n                    \"label\": \"Ulangan Semester\",\n                    \"meta\": {\n                        \"code\": \"230920003\",\n                        \"course\": {\n                            \"value\": \"0739b748-ab6c-480e-aa2d-8c063948384f\",\n                            \"label\": \"Bahasa Indonesia\",\n                            \"meta\": {\n                                \"code\": \"BI\",\n                                \"major\": {\n                                    \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n                                    \"label\": \"Teknik Komputer dan Jaringan\",\n                                    \"meta\": {\n                                        \"code\": \"TKJT\"\n                                    }\n                                },\n                                \"level\": 10\n                            }\n                        }\n                    }\n                },\n                \"number\": 2,\n                \"type\": \"string\",\n                \"score\": {\n                    \"min\": 1,\n                    \"max\": 1\n                }\n            }\n        },\n        {\n            \"value\": \"09c7d912-6468-497a-b46c-5a7df5b5ce96\",\n            \"label\": \"Ini adalah soal bentuk satu baris tanpa kunci jawaban\",\n            \"meta\": {\n                \"topic\": {\n                    \"value\": \"de71f538-8e80-4a89-88ee-8b3a3cac9479\",\n                    \"label\": \"Ulangan Semester\",\n                    \"meta\": {\n                        \"code\": \"230920003\",\n                        \"course\": {\n                            \"value\": \"0739b748-ab6c-480e-aa2d-8c063948384f\",\n                            \"label\": \"Bahasa Indonesia\",\n                            \"meta\": {\n                                \"code\": \"BI\",\n                                \"major\": {\n                                    \"value\": \"015bf366-cfe8-4863-a0f2-41e42755fa77\",\n                                    \"label\": \"Teknik Komputer dan Jaringan\",\n                                    \"meta\": {\n                                        \"code\": \"TKJT\"\n                                    }\n                                },\n                                \"level\": 10\n                            }\n                        }\n                    }\n                },\n                \"number\": 2,\n                \"type\": \"string\",\n                \"score\": {\n                    \"min\": 0,\n                    \"max\": 0\n                }\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Create",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"let access_token = pm.environment.get(\"access_token\");\r",
+													"const response = JSON.parse(responseBody);\r",
+													"const responseData = response.status_data\r",
+													"if (responseData !== null) {\r",
+													"    if (typeof responseData.value !== \"undefined\") {\r",
+													"        pm.environment.set('question_id', responseData.value);\r",
+													"    }\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "pembahasan",
+													"value": "{{topic_id}}",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][isi_soal]",
+													"value": "ini adalah soal",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][jenis_soal]",
+													"value": "multi_choice",
+													"description": "valid values is \na. `multi_choice`\nb. `string`\nc. `lines`\nd. `absolute`",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][0][isi_kunci_jawaban]",
+													"value": "ini adalah kunci jawaban",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][0][skor]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][1][isi_kunci_jawaban]",
+													"value": "ini adalah kunci jawaban salah",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][1][skor]",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "soal[1][isi_soal]",
+													"value": "Ini adalah soal bentuk satu baris tanpa kunci jawaban",
+													"type": "text"
+												},
+												{
+													"key": "soal[1][jenis_soal]",
+													"value": "string",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/course/topic/question",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"course",
+												"topic",
+												"question"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"let access_token = pm.environment.get(\"access_token\");\r",
+													"const response = JSON.parse(responseBody);\r",
+													"const responseData = response.status_data\r",
+													"if (responseData !== null) {\r",
+													"    if (typeof responseData.value !== \"undefined\") {\r",
+													"        pm.environment.set('question_id', responseData.value);\r",
+													"    }\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "pembahasan",
+													"value": "{{topic_id}}",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][data_soal]",
+													"value": "8bdc4492-4f3e-4479-b65e-bd3ef257b8c3",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][isi_soal]",
+													"value": "ini adalah soal",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][jenis_soal]",
+													"value": "multi_choice",
+													"description": "valid values is \na. `multi_choice`\nb. `string`\nc. `lines`\nd. `absolute`",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][skor_minimal]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][0][data_kunci_jawaban]",
+													"value": "3a9ebf88-06c1-4e43-aa0d-8388e111cbf0",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][0][isi_kunci_jawaban]",
+													"value": "ini adalah kunci jawaban",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][0][skor]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][1][data_kunci_jawaban]",
+													"value": "a21bf639-0b16-4c16-a81b-421300ee46b0",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][1][isi_kunci_jawaban]",
+													"value": "ini adalah kunci jawaban salah",
+													"type": "text"
+												},
+												{
+													"key": "soal[0][kunci_jawaban][1][skor]",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "soal[1][isi_soal]",
+													"value": "Ini adalah soal bentuk satu baris tanpa kunci jawaban",
+													"type": "text"
+												},
+												{
+													"key": "soal[1][data_soal]",
+													"value": "043a14b2-1dbc-4add-97e0-8b2bdb57813f",
+													"type": "text"
+												},
+												{
+													"key": "soal[1][jenis_soal]",
+													"value": "string",
+													"type": "text"
+												},
+												{
+													"key": "hapus_soal[0]",
+													"value": "8bdc4492-4f3e-4479-b65e-bd3ef257b8c3",
+													"description": "nullable, only use this if you want to delete",
+													"type": "text"
+												},
+												{
+													"key": "hapus_kunci_jawaban[0]",
+													"value": "ac7f385e-1772-489c-be3f-c01fd0736728",
+													"description": "nullable, only use this if you want to delete",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{api_url}}/course/topic/question",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"course",
+												"topic",
+												"question"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
 						{
 							"name": "Get All",
 							"event": [
@@ -3251,16 +4131,11 @@
 											}
 										],
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/course/topic",
-											"protocol": "https",
+											"raw": "{{api_url}}/course/topic",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"course",
 												"topic"
 											]
@@ -3396,7 +4271,7 @@
 											"urlencoded": [
 												{
 													"key": "mata_pelajaran",
-													"value": "",
+													"value": "{{course_id}}",
 													"type": "text"
 												},
 												{
@@ -3407,16 +4282,11 @@
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/course/topic",
-											"protocol": "https",
+											"raw": "{{api_url}}/course/topic",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"course",
 												"topic"
 											]
@@ -3646,7 +4516,7 @@
 											"urlencoded": [
 												{
 													"key": "mata_pelajaran",
-													"value": "",
+													"value": "{{course_id}}",
 													"type": "text"
 												},
 												{
@@ -3657,16 +4527,11 @@
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/course/topic",
-											"protocol": "https",
+											"raw": "{{api_url}}/course/topic",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"course",
 												"topic"
 											]
@@ -3879,22 +4744,17 @@
 											"urlencoded": [
 												{
 													"key": "data_pembahasan",
-													"value": "",
+													"value": "{{topic_id}}",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "https://ujian.server.smkmuhkdh.net/api/course/topic",
-											"protocol": "https",
+											"raw": "{{api_url}}/course/topic",
 											"host": [
-												"ujian",
-												"server",
-												"smkmuhkdh",
-												"net"
+												"{{api_url}}"
 											],
 											"path": [
-												"api",
 												"course",
 												"topic"
 											]
@@ -4043,7 +4903,7 @@
 							]
 						}
 					],
-					"description": "Kumpulan soal mata pelajaran"
+					"description": "Kumpulan soal mata pelajaran atau Bank Soal"
 				},
 				{
 					"name": "Get All",
@@ -4101,16 +4961,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ujian.server.smkmuhkdh.net/api/course",
-									"protocol": "https",
+									"raw": "{{api_url}}/course",
 									"host": [
-										"ujian",
-										"server",
-										"smkmuhkdh",
-										"net"
+										"{{api_url}}"
 									],
 									"path": [
-										"api",
 										"course"
 									]
 								}
