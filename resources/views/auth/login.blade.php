@@ -75,11 +75,11 @@
             },
             success: (e)=> {
                 if(typeof e.status_message !== "undefined") {
-                    alert(e.status_message);
+                    //alert(e.status_message);
                 }
                 if(typeof e.status_data !== "undefined") {
                     if(typeof e.status_data.token !== "undefined") localStorage.setItem('token', e.status_data.token);
-                    if(typeof e.status_data.data !== "undefined") localStorage.setItem('user', e.status_data.data);
+                    if(typeof e.status_data.data !== "undefined") localStorage.setItem('user', JSON.stringify(e.status_data.data));
                     window.location.href = window.origin + '/home';
                 }
             }
