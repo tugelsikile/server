@@ -125,7 +125,7 @@ class ClientPage extends React.Component {
                                                 </tr>
                                                 :
                                                 this.state.clients.data.map((item)=>
-                                                    <tr onDoubleClick={()=>this.toggleForm(item)} key={item.value}>
+                                                    <tr key={item.value}>
                                                         <td className="align-middle pl-2">{item.meta.code}</td>
                                                         <td className="align-middle">{item.label}</td>
                                                         <td className="align-middle">{item.meta.exam.label}</td>

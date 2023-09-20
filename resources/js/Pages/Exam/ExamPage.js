@@ -93,7 +93,7 @@ class ExamPage extends React.Component {
                                                 </tr>
                                                 :
                                                 this.state.exams.data.map((item)=>
-                                                    <tr onDoubleClick={()=>this.toggleForm(item)} key={item.value}>
+                                                    <tr key={item.value}>
                                                         <td className="align-middle pl-2">{item.label}</td>
                                                         <td className="align-middle">{ExamQuestionBadge({item:item})}</td>
                                                         <td className="align-middle">{ExamAnswerBadge({item:item})}</td>

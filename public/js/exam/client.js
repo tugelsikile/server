@@ -3311,9 +3311,6 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
         className: "align-middle text-center"
       }, this.state.clients.loading ? 'Memuat data ...' : 'Data tidak ditemukan')) : this.state.clients.data.map(function (item) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
-          onDoubleClick: function onDoubleClick() {
-            return _this3.toggleForm(item);
-          },
           key: item.value
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle pl-2"
