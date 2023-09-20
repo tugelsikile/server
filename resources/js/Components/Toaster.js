@@ -44,6 +44,7 @@ export const toastException = (error, showToast = true)=> {
             message = "request successfully loaded with an error";
             if (typeof error.response.data !== "undefined") {
                 if (error.response.data !== null) {
+                    if (typeof error.response.data.message !== "undefined") message = error.response.data.message;
                     if (typeof error.response.data.status_message !== "undefined") message = error.response.data.status_message;
                 }
             }

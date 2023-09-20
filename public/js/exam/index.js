@@ -2926,6 +2926,7 @@ var toastException = function toastException(error) {
       message = "request successfully loaded with an error";
       if (typeof error.response.data !== "undefined") {
         if (error.response.data !== null) {
+          if (typeof error.response.data.message !== "undefined") message = error.response.data.message;
           if (typeof error.response.data.status_message !== "undefined") message = error.response.data.status_message;
         }
       }
@@ -3151,26 +3152,23 @@ var ExamPage = /*#__PURE__*/function (_React$Component) {
                 _context.next = 16;
                 break;
               }
-              //pastikan kalau exam tidak sedang loading
               exams = this.state.exams;
-              exams.loading = true; //rubah state exams.loading
+              exams.loading = true;
               this.setState({
                 exams: exams
-              }); //rubah state exams
+              });
               _context.prev = 4;
               _context.next = 7;
               return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_5__.crudExam)();
             case 7:
               response = _context.sent;
               if (response.data.status_data === null) {
-                //jika status data dari response adalah null
                 exams.loading = false;
                 this.setState({
                   exams: exams
                 });
                 (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_4__.toastError)(response.data.status_message);
               } else {
-                //jika status data dari response tidak null
                 exams.loading = false;
                 exams.data = response.data.status_data;
                 this.setState({

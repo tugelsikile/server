@@ -1,5 +1,6 @@
 {
     "/js/dashboard.js": "/js/dashboard.js",
     "/js/exam/index.js": "/js/exam/index.js",
-    "/js/exam/client.js": "/js/exam/client.js"
+    "/js/exam/client.js": "/js/exam/client.js",
+    "/js/course/index.js": "/js/course/index.js"
 }

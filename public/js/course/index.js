@@ -2553,6 +2553,49 @@ var logout = function logout() {
 
 /***/ }),
 
+/***/ "./resources/js/Components/CardPage.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Components/CardPage.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CardPageHeader: () => (/* binding */ CardPageHeader)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var CardPageHeader = function CardPageHeader(_ref) {
+  var props = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    className: "card-title"
+  }, typeof props.label === "undefined" ? 'Data' : props.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "card-tools"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    className: "btn btn-sm btn-primary mr-1",
+    onClick: function onClick() {
+      return props.onForm();
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fas fa-plus mr-1"
+  }), " Tambah"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    className: "btn btn-sm btn-default",
+    onClick: props.onReload
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "fas fa-2xs fa-refresh"
+  }))));
+};
+
+/***/ }),
+
 /***/ "./resources/js/Components/Layout.js":
 /*!*******************************************!*\
   !*** ./resources/js/Components/Layout.js ***!
@@ -3034,10 +3077,10 @@ var toastConfirmation = function toastConfirmation(props) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Exam/Client/ClientPage.js":
-/*!******************************************************!*\
-  !*** ./resources/js/Pages/Exam/Client/ClientPage.js ***!
-  \******************************************************/
+/***/ "./resources/js/Pages/Course/CoursePage.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Course/CoursePage.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3048,12 +3091,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _Components_Authentication__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Components/Authentication */ "./resources/js/Components/Authentication.js");
-/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Components/Toaster */ "./resources/js/Components/Toaster.js");
-/* harmony import */ var _Services_examService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Services/examService */ "./resources/js/Services/examService.js");
-/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Components/Layout */ "./resources/js/Components/Layout.js");
-/* harmony import */ var _FormClient__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormClient */ "./resources/js/Pages/Exam/Client/FormClient.js");
-/* harmony import */ var _Mixed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Mixed */ "./resources/js/Pages/Exam/Client/Mixed.js");
+/* harmony import */ var _Components_Authentication__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Authentication */ "./resources/js/Components/Authentication.js");
+/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Toaster */ "./resources/js/Components/Toaster.js");
+/* harmony import */ var _Services_courseService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Services/courseService */ "./resources/js/Services/courseService.js");
+/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Layout */ "./resources/js/Components/Layout.js");
+/* harmony import */ var _Services_majorService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Services/majorService */ "./resources/js/Services/majorService.js");
+/* harmony import */ var _FormCourse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormCourse */ "./resources/js/Pages/Course/FormCourse.js");
+/* harmony import */ var _Components_CardPage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Components/CardPage */ "./resources/js/Components/CardPage.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -3079,20 +3123,21 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var ClientPage = /*#__PURE__*/function (_React$Component) {
-  _inherits(ClientPage, _React$Component);
-  var _super = _createSuper(ClientPage);
-  function ClientPage(props) {
+
+var CoursePage = /*#__PURE__*/function (_React$Component) {
+  _inherits(CoursePage, _React$Component);
+  var _super = _createSuper(CoursePage);
+  function CoursePage(props) {
     var _this;
-    _classCallCheck(this, ClientPage);
+    _classCallCheck(this, CoursePage);
     _this = _super.call(this, props);
     _this.state = {
       user: JSON.parse(localStorage.getItem('user')),
-      exams: {
+      courses: {
         loading: true,
         data: []
       },
-      clients: {
+      majors: {
         loading: true,
         data: []
       },
@@ -3102,30 +3147,30 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
       }
     };
     _this.toggleForm = _this.toggleForm.bind(_assertThisInitialized(_this));
-    _this.loadExam = _this.loadExam.bind(_assertThisInitialized(_this));
-    _this.loadClient = _this.loadClient.bind(_assertThisInitialized(_this));
+    _this.loadCourse = _this.loadCourse.bind(_assertThisInitialized(_this));
+    _this.loadMajor = _this.loadMajor.bind(_assertThisInitialized(_this));
     _this.confirmDelete = _this.confirmDelete.bind(_assertThisInitialized(_this));
     return _this;
   }
-  _createClass(ClientPage, [{
+  _createClass(CoursePage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
       (0,_Components_Authentication__WEBPACK_IMPORTED_MODULE_2__.checkAuth)().then(function () {
-        var exams = _this2.state.exams;
-        exams.loading = false;
+        var courses = _this2.state.courses;
+        courses.loading = false;
         _this2.setState({
-          exams: exams
+          courses: courses
         }, function () {
-          return _this2.loadExam();
+          return _this2.loadCourse();
         });
       }).then(function () {
-        var clients = _this2.state.clients;
-        clients.loading = false;
+        var majors = _this2.state.majors;
+        majors.loading = false;
         _this2.setState({
-          clients: clients
+          majors: majors
         }, function () {
-          return _this2.loadClient();
+          return _this2.loadMajor();
         });
       });
     }
@@ -3138,11 +3183,11 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
           app: this,
           method: 'delete',
           icon: 'error',
-          inputName: 'data_client',
-          url: "".concat(window.origin, "/api/exam/client"),
-          title: 'Hapus Server Client Ujian',
-          message: "Anda yakin ingin menghapus Data Server Client Ujian <strong>".concat(data.label, "</strong>?<br/>Data yang berhubungan akan ikut dihapus.<br/>Lanjutkan hapus data server client ujian?"),
-          callback: 'props.app.loadClient()'
+          inputName: 'data_mata_pelajaran',
+          url: "".concat(window.origin, "/api/course"),
+          title: 'Hapus Mata Pelajaran',
+          message: "Anda yakin ingin menghapus Data Mata Pelajaran <strong>".concat(data.label, "</strong>?<br/>Data yang berhubungan akan ikut dihapus.<br/>Lanjutkan hapus data mata pelajaran?"),
+          callback: 'props.app.loadCourse()'
         };
         (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastConfirmation)(options);
       }
@@ -3159,38 +3204,38 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "loadExam",
+    key: "loadMajor",
     value: function () {
-      var _loadExam = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var exams, response;
+      var _loadMajor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var majors, response;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              if (this.state.exams.loading) {
+              if (this.state.majors.loading) {
                 _context.next = 16;
                 break;
               }
-              exams = this.state.exams;
-              exams.loading = true;
+              majors = this.state.majors;
+              majors.loading = true;
               this.setState({
-                exams: exams
+                majors: majors
               });
               _context.prev = 4;
               _context.next = 7;
-              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_4__.crudExam)();
+              return (0,_Services_majorService__WEBPACK_IMPORTED_MODULE_6__.crudMajor)();
             case 7:
               response = _context.sent;
               if (response.data.status_data === null) {
-                exams.loading = false;
+                majors.loading = false;
                 this.setState({
-                  exams: exams
+                  majors: majors
                 });
                 (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastError)(response.data.status_message);
               } else {
-                exams.loading = false;
-                exams.data = response.data.status_data;
+                majors.loading = false;
+                majors.data = response.data.status_data;
                 this.setState({
-                  exams: exams
+                  majors: majors
                 });
               }
               _context.next = 16;
@@ -3198,9 +3243,9 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
             case 11:
               _context.prev = 11;
               _context.t0 = _context["catch"](4);
-              exams.loading = false;
+              majors.loading = false;
               this.setState({
-                exams: exams
+                majors: majors
               });
               (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastException)(_context.t0);
             case 16:
@@ -3209,44 +3254,44 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
           }
         }, _callee, this, [[4, 11]]);
       }));
-      function loadExam() {
-        return _loadExam.apply(this, arguments);
+      function loadMajor() {
+        return _loadMajor.apply(this, arguments);
       }
-      return loadExam;
+      return loadMajor;
     }()
   }, {
-    key: "loadClient",
+    key: "loadCourse",
     value: function () {
-      var _loadClient = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-        var clients, response;
+      var _loadCourse = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var courses, response;
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              if (this.state.clients.loading) {
+              if (this.state.courses.loading) {
                 _context2.next = 16;
                 break;
               }
-              clients = this.state.clients;
-              clients.loading = true;
+              courses = this.state.courses;
+              courses.loading = true;
               this.setState({
-                clients: clients
+                courses: courses
               });
               _context2.prev = 4;
               _context2.next = 7;
-              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_4__.crudClient)();
+              return (0,_Services_courseService__WEBPACK_IMPORTED_MODULE_4__.crudCourse)();
             case 7:
               response = _context2.sent;
               if (response.data.status_data === null) {
-                clients.loading = false;
+                courses.loading = false;
                 this.setState({
-                  clients: clients
+                  courses: courses
                 });
                 (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastError)(response.data.status_message);
               } else {
-                clients.loading = false;
-                clients.data = response.data.status_data;
+                courses.loading = false;
+                courses.data = response.data.status_data;
                 this.setState({
-                  clients: clients
+                  courses: courses
                 });
               }
               _context2.next = 16;
@@ -3254,9 +3299,9 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
             case 11:
               _context2.prev = 11;
               _context2.t0 = _context2["catch"](4);
-              clients.loading = false;
+              courses.loading = false;
               this.setState({
-                clients: clients
+                courses: courses
               });
               (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_3__.toastException)(_context2.t0);
             case 16:
@@ -3265,10 +3310,10 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
           }
         }, _callee2, this, [[4, 11]]);
       }));
-      function loadClient() {
-        return _loadClient.apply(this, arguments);
+      function loadCourse() {
+        return _loadCourse.apply(this, arguments);
       }
-      return loadClient;
+      return loadCourse;
     }()
   }, {
     key: "render",
@@ -3279,51 +3324,58 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
       }, this.state)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "content-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__.PageHeader, {
-        title: "Server Client Ujian",
-        children: [{
-          url: "".concat(window.origin, "/exam"),
-          label: 'Ujian'
-        }]
+        title: "Mata Pelajaran",
+        children: []
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
         className: "content"
-      }, this.state.form.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormClient__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }, this.state.form.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormCourse__WEBPACK_IMPORTED_MODULE_7__["default"], {
         open: this.state.form.open,
         data: this.state.form.data,
-        exams: this.state.exams,
-        handleExam: this.loadExam,
         handleClose: this.toggleForm,
-        handleUpdate: this.loadClient
+        handleUpdate: this.loadCourse,
+        handleMajor: this.loadMajor,
+        majors: this.state.majors
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "card card-outline card-primary"
-      }, this.state.clients.loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      }, this.state.courses.loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "overlay"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_7__.ClientPageCardHeader, {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_CardPage__WEBPACK_IMPORTED_MODULE_8__.CardPageHeader, {
+        title: "Data Mata Pelajaran",
         onForm: this.toggleForm,
-        onReload: this.loadClient
+        onReload: this.loadCourse
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "card-body p-0"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "table-responsive"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", {
-        className: "table mb-0 table-sm table-borderless table-striped table-hover"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_7__.ClientTableHeader, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, this.state.clients.data.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+        className: "table table-sm table-borderless table-striped table-hover"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+        className: "align-middle pl-2"
+      }, "Nama Mata Pelajaran"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+        className: "align-middle"
+      }, "Singkatan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+        className: "align-middle"
+      }, "Jurusan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+        width: 100,
+        className: "align-middle"
+      }, "Tingkat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+        width: 30,
+        className: "align-middle pr-2"
+      }, "Aksi"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, this.state.courses.data.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
         colSpan: 5,
         className: "align-middle text-center"
-      }, this.state.clients.loading ? 'Memuat data ...' : 'Data tidak ditemukan')) : this.state.clients.data.map(function (item) {
+      }, this.state.courses.loading ? 'Memuat data ...' : 'Data tidak ditemukan')) : this.state.courses.data.map(function (item) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
-          onDoubleClick: function onDoubleClick() {
-            return _this3.toggleForm(item);
-          },
           key: item.value
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle pl-2"
-        }, item.meta.code), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
-          className: "align-middle"
         }, item.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle"
-        }, item.meta.exam.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+        }, item.meta.code), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle"
-        }, item.meta.token), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+        }, item.meta.major !== null && item.meta.major.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+          className: "align-middle"
+        }, item.meta.level), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
           className: "align-middle pr-2"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
           className: "btn-group btn-group-sm"
@@ -3334,7 +3386,7 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
             return _this3.toggleForm(item);
           }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-          className: "fas fa-2xs fa-pencil-alt"
+          className: "fas fa-pencil-alt fa-2xs"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
           type: "button",
           className: "btn btn-danger",
@@ -3342,25 +3394,25 @@ var ClientPage = /*#__PURE__*/function (_React$Component) {
             return _this3.confirmDelete(item);
           }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-          className: "fas fa-2xs fa-trash-alt"
+          className: "fas fa-trash-alt fa-2xs"
         })))));
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tfoot", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mixed__WEBPACK_IMPORTED_MODULE_7__.ClientTableHeader, null)))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__.MainFooter, null));
+      })))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__.MainFooter, null));
     }
   }]);
-  return ClientPage;
+  return CoursePage;
 }((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClientPage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CoursePage);
 var root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('main-container'));
-root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ClientPage, {
-  route: "client"
+root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(CoursePage, {
+  route: "course"
 })));
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Exam/Client/FormClient.js":
-/*!******************************************************!*\
-  !*** ./resources/js/Pages/Exam/Client/FormClient.js ***!
-  \******************************************************/
+/***/ "./resources/js/Pages/Course/FormCourse.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Course/FormCourse.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3370,9 +3422,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Components/Toaster */ "./resources/js/Components/Toaster.js");
-/* harmony import */ var _Services_examService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Services/examService */ "./resources/js/Services/examService.js");
-/* harmony import */ var _FormExam__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FormExam */ "./resources/js/Pages/Exam/FormExam.js");
+/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Toaster */ "./resources/js/Components/Toaster.js");
+/* harmony import */ var _Services_courseService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Services/courseService */ "./resources/js/Services/courseService.js");
+/* harmony import */ var _Major_FormMajor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Major/FormMajor */ "./resources/js/Pages/Major/FormMajor.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -3393,21 +3445,23 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var FormClient = /*#__PURE__*/function (_React$Component) {
-  _inherits(FormClient, _React$Component);
-  var _super = _createSuper(FormClient);
-  function FormClient(props) {
+var FormCourse = /*#__PURE__*/function (_React$Component) {
+  _inherits(FormCourse, _React$Component);
+  var _super = _createSuper(FormCourse);
+  function FormCourse(props) {
     var _this;
-    _classCallCheck(this, FormClient);
+    _classCallCheck(this, FormCourse);
     _this = _super.call(this, props);
     _this.state = {
       loading: false,
       form: {
         id: null,
-        exam: '',
-        name: ''
+        name: '',
+        major: '',
+        code: '',
+        level: 10
       },
-      form_exam: {
+      form_major: {
         open: false,
         data: null
       }
@@ -3415,46 +3469,313 @@ var FormClient = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.toggleForm = _this.toggleForm.bind(_assertThisInitialized(_this));
-    _this.handleUpdateExam = _this.handleUpdateExam.bind(_assertThisInitialized(_this));
+    _this.handleMajor = _this.handleMajor.bind(_assertThisInitialized(_this));
     return _this;
   }
-  _createClass(FormClient, [{
-    key: "toggleForm",
-    value: function toggleForm() {
-      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      var form_exam = this.state.form_exam;
-      form_exam.open = !this.state.form_exam.open;
-      form_exam.data = data;
-      this.setState({
-        form_exam: form_exam
-      });
-    }
-  }, {
-    key: "handleUpdateExam",
-    value: function handleUpdateExam(data) {
-      var form = this.state.form;
-      form.exam = data.value;
-      this.setState({
-        form: form
-      });
-      this.props.handleExam(data);
-    }
-  }, {
+  _createClass(FormCourse, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var form = this.state.form;
       if (typeof this.props.open !== "undefined" && this.props.open) {
         if (typeof this.props.data !== "undefined" && this.props.data !== null) {
-          if (form.id === null) {
+          if (this.state.form.id === null) {
+            var form = this.state.form;
             form.id = this.props.data.value;
-            form.exam = this.props.data.meta.exam.value;
             form.name = this.props.data.label;
+            if (this.props.data.meta.major !== null) form.major = this.props.data.meta.major.value;
+            form.code = this.props.data.meta.code;
+            form.level = this.props.data.meta.level;
+            this.setState({
+              form: form
+            });
           }
         }
       }
+    }
+  }, {
+    key: "toggleForm",
+    value: function toggleForm() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var form_major = this.state.form_major;
+      form_major.open = !this.state.form_major.open;
+      form_major.data = data;
+      this.setState({
+        form_major: form_major
+      });
+    }
+  }, {
+    key: "handleMajor",
+    value: function handleMajor(data) {
+      var form = this.state.form;
+      form.major = data.value;
       this.setState({
         form: form
       });
+      this.props.handleMajor(data);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      var form = this.state.form;
+      form[event.target.name] = event.target.value;
+      this.setState({
+        form: form
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function () {
+      var _handleSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
+        var formData, response;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              event.preventDefault();
+              if (this.state.loading) {
+                _context.next = 21;
+                break;
+              }
+              this.setState({
+                loading: true
+              });
+              _context.prev = 3;
+              formData = new FormData();
+              formData.append('_method', this.state.form.id === null ? 'put' : 'patch');
+              if (this.state.form.id !== null) formData.append('data_mata_pelajaran', this.state.form.id);
+              if (this.state.form.major.length > 0) formData.append('jurusan', this.state.form.major);
+              formData.append('singkatan', this.state.form.code);
+              formData.append('nama_mata_pelajaran', this.state.form.name);
+              formData.append('tingkat', this.state.form.level);
+              _context.next = 13;
+              return (0,_Services_courseService__WEBPACK_IMPORTED_MODULE_2__.crudCourse)(formData);
+            case 13:
+              response = _context.sent;
+              if (response.data.status_data === null) {
+                this.setState({
+                  loading: false
+                });
+                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastError)(response.data.status_message);
+              } else {
+                this.setState({
+                  loading: false
+                });
+                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastSuccess)(response.data.status_message);
+                this.props.handleUpdate();
+                this.props.handleClose();
+              }
+              _context.next = 21;
+              break;
+            case 17:
+              _context.prev = 17;
+              _context.t0 = _context["catch"](3);
+              this.setState({
+                loading: false
+              });
+              (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastException)(_context.t0);
+            case 21:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this, [[3, 17]]);
+      }));
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+      return handleSubmit;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+      return this.state.form_major.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Major_FormMajor__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        open: this.state.form_major.open,
+        data: this.state.form_major.data,
+        handleClose: this.toggleForm,
+        handleUpdate: this.handleMajor
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "card card-outline ".concat(this.state.form.id === null ? 'card-primary' : 'card-info')
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+        className: "card-title"
+      }, "Formulir ", this.state.form.id === null ? 'Tambah' : 'Rubah', " Mata Pelajaran")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "card-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Jurusan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-7"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+        value: this.state.form.major,
+        onChange: this.handleChange,
+        name: "major",
+        className: "custom-select",
+        disabled: this.state.loading || this.props.majors.loading
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+        value: ""
+      }, "=== Pilih Jurusan ==="), this.props.majors.data.map(function (item) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+          key: item.value,
+          value: item.value
+        }, item.label);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        disabled: this.state.loading,
+        type: "button",
+        className: "btn btn-sm btn-default mr-1",
+        onClick: function onClick() {
+          return _this2.toggleForm();
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas fa-plus fa-2xs"
+      })), this.state.form.major.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        disabled: this.state.loading,
+        type: "button",
+        className: "btn btn-sm btn-primary",
+        onClick: function onClick() {
+          var index = _this2.props.majors.data.findIndex(function (f) {
+            return f.value === _this2.state.form.major;
+          });
+          if (index >= 0) _this2.toggleForm(_this2.props.majors.data[index]);
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas fa-pencil-alt fa-2xs"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Nama Mata Pelajaran"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-9"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+        value: this.state.form.name,
+        name: "name",
+        onChange: this.handleChange,
+        className: "form-control",
+        disabled: this.state.loading
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Singkatan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+        value: this.state.form.code,
+        name: "code",
+        onChange: this.handleChange,
+        className: "form-control",
+        disabled: this.state.loading
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Tingkat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+        value: this.state.form.level,
+        name: "level",
+        onChange: this.handleChange,
+        className: "form-control",
+        disabled: this.state.loading,
+        type: "number",
+        min: 1,
+        max: 12
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "card-footer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "d-flex justify-content-between"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        type: "submit",
+        className: "btn btn-primary"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas mr-1 ".concat(this.state.loading ? 'fa-circle-notch fa-spin' : 'fa-save')
+      }), this.state.form.id === null ? 'Tambah' : 'Simpan'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        onClick: function onClick() {
+          return _this2.props.handleClose();
+        },
+        type: "button",
+        className: "btn btn-default"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+        className: "fas fa-times mr-1"
+      }), " Tutup"))));
+    }
+  }]);
+  return FormCourse;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormCourse);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Major/FormMajor.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Major/FormMajor.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Toaster */ "./resources/js/Components/Toaster.js");
+/* harmony import */ var _Services_majorService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Services/majorService */ "./resources/js/Services/majorService.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var FormMajor = /*#__PURE__*/function (_React$Component) {
+  _inherits(FormMajor, _React$Component);
+  var _super = _createSuper(FormMajor);
+  function FormMajor(props) {
+    var _this;
+    _classCallCheck(this, FormMajor);
+    _this = _super.call(this, props);
+    _this.state = {
+      loading: false,
+      form: {
+        id: null,
+        name: '',
+        code: ''
+      }
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+  _createClass(FormMajor, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (typeof this.props.open !== "undefined" && this.props.open) {
+        if (typeof this.props.data !== "undefined" && this.props.data !== null) {
+          if (this.state.form.id === null) {
+            var form = this.state.form;
+            form.id = this.props.data.value;
+            form.name = this.props.data.label;
+            form.code = this.props.data.meta.code;
+            this.setState({
+              form: form
+            });
+          }
+        }
+      }
     }
   }, {
     key: "handleChange",
@@ -3484,14 +3805,14 @@ var FormClient = /*#__PURE__*/function (_React$Component) {
               _context.prev = 3;
               formData = new FormData();
               formData.append('_method', this.state.form.id === null ? 'put' : 'patch');
-              if (this.state.form.id !== null) formData.append('data_client', this.state.form.id);
-              if (this.state.form.exam.length > 0) formData.append('ujian', this.state.form.exam);
-              formData.append('nama_client', this.state.form.name);
+              if (this.state.form.id !== null) formData.append('data_jurusan', this.state.form.id);
+              formData.append('nama_jurusan', this.state.form.name);
+              formData.append('singkatan', this.state.form.code);
               _context.next = 11;
-              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_2__.crudClient)(formData);
+              return (0,_Services_majorService__WEBPACK_IMPORTED_MODULE_2__.crudMajor)(formData);
             case 11:
               response = _context.sent;
-              if (response.data.params === null) {
+              if (response.data.status_data === null) {
                 this.setState({
                   loading: false
                 });
@@ -3501,7 +3822,7 @@ var FormClient = /*#__PURE__*/function (_React$Component) {
                   loading: false
                 });
                 (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastSuccess)(response.data.status_message);
-                this.props.handleUpdate();
+                this.props.handleUpdate(response.data.status_data);
                 this.props.handleClose();
               }
               _context.next = 19;
@@ -3528,75 +3849,36 @@ var FormClient = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _this2 = this;
-      return this.state.form_exam.open ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormExam__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        data: this.state.form_exam.data,
-        handleClose: this.toggleForm,
-        open: this.state.form_exam.open,
-        handleUpdate: this.handleUpdateExam
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
         onSubmit: this.handleSubmit,
         className: "card card-outline ".concat(this.state.form.id === null ? 'card-primary' : 'card-info')
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "card-header"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
         className: "card-title"
-      }, "Formulir ", this.state.form.id === null ? 'Tambah' : 'Rubah', " Server Client Ujian")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      }, "Formulir ", this.state.form.id === null ? 'Tambah' : 'Rubah', " Jurusan")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "card-body"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "form-group row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
         className: "col-form-label col-md-3"
-      }, "Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "col-md-7"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
-        onChange: this.handleChange,
-        name: "exam",
-        value: this.state.form.exam,
-        className: "custom-select",
-        disabled: this.state.loading
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
-        value: ""
-      }, "=== Pilih Ujian ==="), this.props.exams.data.map(function (item) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
-          key: item.value,
-          value: item.value
-        }, item.label);
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "col-md-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        title: "Buat data ujian baru",
-        disabled: this.state.loading,
-        type: "button",
-        className: "btn btn-default btn-sm mr-1",
-        onClick: function onClick() {
-          return _this2.toggleForm();
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-        className: "fas fa-2xs fa-plus"
-      })), this.state.form.exam.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        title: "Rubah data ujian ini",
-        disabled: this.state.loading,
-        type: "button",
-        className: "btn btn-primary btn-sm",
-        onClick: function onClick() {
-          var index = _this2.props.exams.data.findIndex(function (f) {
-            return f.value === _this2.state.form.exam;
-          });
-          if (index >= 0) {
-            _this2.toggleForm(_this2.props.exams.data[index]);
-          }
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-        className: "fas fa-2xs fa-pencil-alt"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "form-group row"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-        className: "col-form-label col-md-3"
-      }, "Nama Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      }, "Nama Jurusan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
         value: this.state.form.name,
         name: "name",
+        onChange: this.handleChange,
+        className: "form-control",
+        disabled: this.state.loading
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "form-group row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+        className: "col-form-label col-md-3"
+      }, "Singkatan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "col-md-9"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+        value: this.state.form.code,
+        name: "code",
         onChange: this.handleChange,
         className: "form-control",
         disabled: this.state.loading
@@ -3620,346 +3902,9 @@ var FormClient = /*#__PURE__*/function (_React$Component) {
       }), " Tutup"))));
     }
   }]);
-  return FormClient;
+  return FormMajor;
 }((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormClient);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Exam/Client/Mixed.js":
-/*!*************************************************!*\
-  !*** ./resources/js/Pages/Exam/Client/Mixed.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ClientPageCardHeader: () => (/* binding */ ClientPageCardHeader),
-/* harmony export */   ClientTableHeader: () => (/* binding */ ClientTableHeader)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var ClientPageCardHeader = function ClientPageCardHeader(_ref) {
-  var props = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "card-header"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "card-title"
-  }, "Data Server Client Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "card-tools"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    type: "button",
-    className: "btn btn-sm btn-primary mr-1",
-    onClick: function onClick() {
-      return props.onForm();
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "fas fa-plus mr-1"
-  }), " Tambah"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    type: "button",
-    className: "btn btn-sm btn-default",
-    onClick: props.onReload
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "fas fa-2xs fa-refresh"
-  }))));
-};
-var ClientTableHeader = function ClientTableHeader() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    width: 100,
-    className: "align-middle pl-2"
-  }, "ID Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    className: "align-middle"
-  }, "Nama Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    className: "align-middle"
-  }, "Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    className: "align-middle"
-  }, "Token"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
-    width: 50,
-    className: "align-middle pr-2"
-  }, "Aksi"));
-};
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Exam/FormExam.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Exam/FormExam.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Toaster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Toaster */ "./resources/js/Components/Toaster.js");
-/* harmony import */ var _Services_examService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Services/examService */ "./resources/js/Services/examService.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-var FormExam = /*#__PURE__*/function (_React$Component) {
-  _inherits(FormExam, _React$Component);
-  var _super = _createSuper(FormExam);
-  function FormExam(props) {
-    var _this;
-    _classCallCheck(this, FormExam);
-    _this = _super.call(this, props);
-    _this.state = {
-      loading: false,
-      form: {
-        id: null,
-        name: '',
-        description: '',
-        answer: false,
-        question: false,
-        result: false
-      }
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSwitch = _this.handleSwitch.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-  /* method pada saat formulir dimuat*/
-  _createClass(FormExam, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var form = this.state.form;
-      if (typeof this.props.open !== "undefined" && this.props.open) {
-        if (typeof this.props.data !== "undefined" && this.props.data !== null) {
-          if (form.id === null) {
-            /* isi formulir berdasarkan data dari ExamPage */
-            form.id = this.props.data.value;
-            form.name = this.props.data.label;
-            form.description = this.props.data.meta.description;
-            form.answer = this.props.data.meta.random.answer;
-            form.question = this.props.data.meta.random.question;
-            form.result = this.props.data.meta.show_result;
-          }
-        }
-      }
-      this.setState({
-        form: form
-      });
-    }
-    /* method pada saat user mengisi form input text atau textarea*/
-  }, {
-    key: "handleChange",
-    value: function handleChange(event) {
-      var form = this.state.form;
-      form[event.target.name] = event.target.value;
-      this.setState({
-        form: form
-      });
-    }
-    /* method pada saat user click checkbox / switch*/
-  }, {
-    key: "handleSwitch",
-    value: function handleSwitch(event) {
-      var form = this.state.form;
-      form[event.target.name] = !this.state.form[event.target.name];
-      this.setState({
-        form: form
-      });
-    }
-    /* method pada saat formulir disubmit */
-  }, {
-    key: "handleSubmit",
-    value: function () {
-      var _handleSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-        var formData, response;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              event.preventDefault();
-              if (this.state.loading) {
-                _context.next = 22;
-                break;
-              }
-              this.setState({
-                loading: true
-              });
-              _context.prev = 3;
-              formData = new FormData();
-              formData.append('_method', this.state.form.id === null ? 'put' : 'patch'); //method create atau update
-              if (this.state.form.id !== null) formData.append('data_ujian', this.state.form.id);
-              formData.append('nama_ujian', this.state.form.name);
-              formData.append('keterangan', this.state.form.description);
-              formData.append('acak_soal', this.state.form.question ? 'ya' : 'tidak');
-              formData.append('acak_pilihan_ganda', this.state.form.answer ? 'ya' : 'tidak');
-              formData.append('tampilkan_hasil', this.state.form.result ? 'ya' : 'tidak');
-              _context.next = 14;
-              return (0,_Services_examService__WEBPACK_IMPORTED_MODULE_2__.crudExam)(formData);
-            case 14:
-              response = _context.sent;
-              if (response.data.status_data === null) {
-                this.setState({
-                  loading: false
-                });
-                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastError)(response.data.status_message);
-              } else {
-                this.setState({
-                  loading: false
-                });
-                (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastSuccess)(response.data.status_message);
-                this.props.handleUpdate();
-                this.props.handleClose();
-              }
-              _context.next = 22;
-              break;
-            case 18:
-              _context.prev = 18;
-              _context.t0 = _context["catch"](3);
-              this.setState({
-                loading: false
-              });
-              (0,_Components_Toaster__WEBPACK_IMPORTED_MODULE_1__.toastException)(_context.t0);
-            case 22:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee, this, [[3, 18]]);
-      }));
-      function handleSubmit(_x) {
-        return _handleSubmit.apply(this, arguments);
-      }
-      return handleSubmit;
-    }()
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
-        onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "card card-outline ".concat(this.state.form.id === null ? 'card-primary' : 'card-info')
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "card-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-        className: "card-title"
-      }, "Formulir ", this.state.form.id === null ? 'Tambah' : 'Rubah', " Ujian")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "form-group row"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-        className: "col-form-label col-md-3"
-      }, "Nama Ujian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "col-md-9"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        value: this.state.form.name,
-        onChange: this.handleChange,
-        name: "name",
-        className: "form-control",
-        disabled: this.state.loading
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "form-group row"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-        className: "col-form-label col-md-3"
-      }, "Keterangan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "col-md-9"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
-        value: this.state.form.description,
-        onChange: this.handleChange,
-        name: "description",
-        className: "form-control",
-        disabled: this.state.loading,
-        style: {
-          resize: 'none'
-        }
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "col-md-9 offset-3"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "custom-control custom-switch"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        disabled: this.state.loading,
-        onChange: this.handleSwitch,
-        name: "question",
-        checked: this.state.form.question,
-        type: "checkbox",
-        className: "custom-control-input",
-        id: "question"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-        className: "custom-control-label",
-        htmlFor: "question"
-      }, this.state.form.question ? 'Soal diacak' : 'Soal tidak diacak'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "custom-control custom-switch"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        disabled: this.state.loading,
-        onChange: this.handleSwitch,
-        name: "answer",
-        checked: this.state.form.answer,
-        type: "checkbox",
-        className: "custom-control-input",
-        id: "answer"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-        className: "custom-control-label",
-        htmlFor: "answer"
-      }, this.state.form.answer ? 'Pilihan ganda diacak' : 'Pilihan ganda tidak diacak'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "custom-control custom-switch"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        disabled: this.state.loading,
-        onChange: this.handleSwitch,
-        name: "result",
-        checked: this.state.form.result,
-        type: "checkbox",
-        className: "custom-control-input",
-        id: "result"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
-        className: "custom-control-label",
-        htmlFor: "result"
-      }, this.state.form.result ? 'Hasil ditampilkan setelah peserta selesai ujian' : 'Hasil tidak ditampilkan setelah peserta selesai ujian')))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "card-footer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "d-flex justify-content-between"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        type: "submit",
-        className: "btn btn-primary"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-        className: "fas mr-1 ".concat(this.state.loading ? 'fa-circle-notch fa-spin' : 'fa-save')
-      }), this.state.form.id === null ? 'Tambah' : 'Simpan'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        onClick: function onClick() {
-          return _this2.props.handleClose();
-        },
-        type: "button",
-        className: "btn btn-default"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-        className: "fas fa-times mr-1"
-      }), " Tutup")))));
-    }
-  }]);
-  return FormExam;
-}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormExam);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormMajor);
 
 /***/ }),
 
@@ -3985,17 +3930,16 @@ var axiosHeader = function axiosHeader() {
 
 /***/ }),
 
-/***/ "./resources/js/Services/examService.js":
-/*!**********************************************!*\
-  !*** ./resources/js/Services/examService.js ***!
-  \**********************************************/
+/***/ "./resources/js/Services/courseService.js":
+/*!************************************************!*\
+  !*** ./resources/js/Services/courseService.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   crudClient: () => (/* binding */ crudClient),
-/* harmony export */   crudExam: () => (/* binding */ crudExam)
+/* harmony export */   crudCourse: () => (/* binding */ crudCourse)
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -4006,7 +3950,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-var crudExam = /*#__PURE__*/function () {
+var crudCourse = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data) {
     var request;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
@@ -4016,7 +3960,7 @@ var crudExam = /*#__PURE__*/function () {
             headers: (0,_config__WEBPACK_IMPORTED_MODULE_1__.axiosHeader)(),
             method: "post",
             data: data,
-            url: "".concat(window.origin, "/api/exam")
+            url: "".concat(window.origin, "/api/course")
           });
           return _context.abrupt("return", Promise.resolve(request));
         case 2:
@@ -4025,31 +3969,54 @@ var crudExam = /*#__PURE__*/function () {
       }
     }, _callee);
   }));
-  return function crudExam(_x) {
+  return function crudCourse(_x) {
     return _ref.apply(this, arguments);
   };
 }();
-var crudClient = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(data) {
+
+/***/ }),
+
+/***/ "./resources/js/Services/majorService.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Services/majorService.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   crudMajor: () => (/* binding */ crudMajor)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config */ "./resources/js/Services/config.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var crudMajor = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data) {
     var request;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
         case 0:
           request = axios__WEBPACK_IMPORTED_MODULE_0___default()({
             headers: (0,_config__WEBPACK_IMPORTED_MODULE_1__.axiosHeader)(),
             method: "post",
             data: data,
-            url: "".concat(window.origin, "/api/exam/client")
+            url: "".concat(window.origin, "/api/major")
           });
-          return _context2.abrupt("return", Promise.resolve(request));
+          return _context.abrupt("return", Promise.resolve(request));
         case 2:
         case "end":
-          return _context2.stop();
+          return _context.stop();
       }
-    }, _callee2);
+    }, _callee);
   }));
-  return function crudClient(_x2) {
-    return _ref2.apply(this, arguments);
+  return function crudMajor(_x) {
+    return _ref.apply(this, arguments);
   };
 }();
 
@@ -58120,10 +58087,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*****************************************!*\
-  !*** ./resources/js/src/exam/client.js ***!
-  \*****************************************/
-__webpack_require__(/*! ../../Pages/Exam/Client/ClientPage */ "./resources/js/Pages/Exam/Client/ClientPage.js");
+/*!******************************************!*\
+  !*** ./resources/js/src/course/index.js ***!
+  \******************************************/
+__webpack_require__(/*! ../../Pages/Course/CoursePage */ "./resources/js/Pages/Course/CoursePage.js");
 })();
 
 /******/ })()

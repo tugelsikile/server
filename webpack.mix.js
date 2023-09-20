@@ -13,3 +13,4 @@ const mix = require('laravel-mix');
 mix.js('resources/js/src/dashboard.js', 'public/js')
 mix.js('resources/js/src/exam/index.js','public/js/exam');
 mix.js('resources/js/src/exam/client.js','public/js/exam');
+mix.js('resources/js/src/course/index.js','public/js/course');

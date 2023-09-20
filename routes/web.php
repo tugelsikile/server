@@ -20,3 +20,6 @@ Route::group(['prefix' => 'exam'], function () {
     Route::get('/', function () { return view('exam.index'); });
     Route::get('/client', function () { return view('exam.client'); });
 });
+Route::group(['prefix' => 'course'], function () {
+    Route::get('/', function(){ return view('course.index'); });
+});

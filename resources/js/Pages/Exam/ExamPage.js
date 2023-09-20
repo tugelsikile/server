@@ -42,16 +42,16 @@ class ExamPage extends React.Component {
         this.setState({form});
     }
     async loadExam() {
-        if (! this.state.exams.loading) { //pastikan kalau exam tidak sedang loading
+        if (! this.state.exams.loading) {
             let exams = this.state.exams;
-            exams.loading = true; //rubah state exams.loading
-            this.setState({exams}); //rubah state exams
+            exams.loading = true;
+            this.setState({exams});
             try {
                 let response = await crudExam();
-                if (response.data.status_data === null) { //jika status data dari response adalah null
+                if (response.data.status_data === null) {
                     exams.loading = false; this.setState({exams});
                     toastError(response.data.status_message);
-                } else { //jika status data dari response tidak null
+                } else {
                     exams.loading = false;
                     exams.data = response.data.status_data;
                     this.setState({exams});
