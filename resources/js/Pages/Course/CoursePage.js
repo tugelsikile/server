@@ -111,7 +111,7 @@ class CoursePage extends React.Component {
                                 <CardPageHeader title="Data Mata Pelajaran" onForm={this.toggleForm} onReload={this.loadCourse}/>
                                 <div className="card-body p-0">
                                     <div className="table-responsive">
-                                        <table className="table table-sm table-borderless table-striped table-hover">
+                                        <table className="table table-sm table-borderless table-striped table-hover mb-0">
                                             <thead>
                                             <tr>
                                                 <th className="align-middle pl-2">Nama Mata Pelajaran</th>
@@ -149,6 +149,15 @@ class CoursePage extends React.Component {
                                                 )
                                             }
                                             </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th className="align-middle pl-2">Nama Mata Pelajaran</th>
+                                                <th className="align-middle">Singkatan</th>
+                                                <th className="align-middle">Jurusan</th>
+                                                <th width={100} className="align-middle">Tingkat</th>
+                                                <th width={30} className="align-middle pr-2">Aksi</th>
+                                            </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
