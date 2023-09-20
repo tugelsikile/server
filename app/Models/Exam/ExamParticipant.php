@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $id
  * @property string $exam
  * @property string $user
+ * @property string $client
+ * @property string $user_code
  */
 class ExamParticipant extends Model
 {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Course\QuestionController;
 use App\Http\Controllers\Course\TopicController;
 use App\Http\Controllers\Exam\ClientController;
 use App\Http\Controllers\Exam\ExamController;
+use App\Http\Controllers\Exam\ParticipantController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Http\Request;
@@ -31,6 +32,9 @@ Route::group(['prefix' => 'exam', 'middleware' => 'auth:api'], function () {
     Route::any('/', [ExamController::class, 'crud']);
     Route::group(['prefix' => 'client'], function () {
         Route::any('/', [ClientController::class, 'crud']);
+        Route::group(['prefix' => 'participant'], function () {
+            Route::any('/', [ParticipantController::class, 'crud']);
+        });
     });
 });
 Route::any('/major', [MajorController::class, 'crud'])->middleware('auth:api');

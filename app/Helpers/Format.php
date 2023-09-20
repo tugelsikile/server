@@ -2,6 +2,7 @@
 
 use App\Models\Course\CourseTopic;
 use App\Models\Exam\ExamClient;
+use App\Models\Exam\ExamParticipant;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
@@ -91,4 +92,31 @@ function toStr($n, $case = 'upper')
         $alpha = strtolower($alpha);
     }
     return $alpha;
+}
+function generateParticipantCode(string $clientId) {
+    if ($clientId != null) {
+        $total = ExamParticipant::where('client', $clientId)->select('id')->count();
+        $client = ExamClient::where('id', $clientId)->first();
+    } else {
+        $total = ExamParticipant::select('id')->count();
+        $client = ExamClient::all()->first();
+    }
+    if ($client == null) $client = Carbon::now()->format('ym') . '000';
+    if ($client != null) $client = $client->code;
+    $total = $total + 1;
+    $code = $client . Str::padLeft($total,4,'0');
+    while (ExamParticipant::where('client', $client)->where('user_code', $code)->count() > 0) {
+        $total = $total + 1;
+        $code = $client . Str::padLeft($total,4,'0');
+    }
+    return $code;
+}
+function generateMajorCode(string $name): string
+{
+    $code = '';
+    $name = explode(' ', $name);
+    foreach ($name as $item) {
+        $code .= Str::upper(Str::substr($item,0,1));
+    }
+    return $code;
 }
